@@ -12,7 +12,15 @@
 		private $privileges;
 
 		public function __construct($data){
-		    //TODO
+		    if(!is_null($data)){
+		    	$idClient	=	$data["idClient"];
+		    	$nom		=	$data["nom"];
+		    	$prenom		=	$data["prenom"];
+		    	$adresse	=	$data["adresse"];
+		    	$codePostal	=	$data["codePostal"];
+		    	$ville		=	$data["ville"];
+		    	$privileges	=	$data["privileges"];
+		    }
 		}
 
 

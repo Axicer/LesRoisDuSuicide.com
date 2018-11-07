@@ -9,15 +9,20 @@
 		private $prix;
 
 		public function __construct($data){
-			//TODO
+			if(!is_null($data)){
+		    	$idProduit	=	$data["idProduit"];
+		    	$nom		=	$data["nom"];
+		    	$qteStock	=	$data["qteStock"];
+		    	$prix		=	$data["prix"];
+		    }
 		}
 
 		public function __get($att){
-			return this->$att;
+			return $this->$att;
 		}
 
 		public function __set($att, $val){
-			this->$att = $val;
+			$this->$att = $val;
 		}
 	}
 ?>

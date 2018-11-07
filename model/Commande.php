@@ -1,7 +1,7 @@
 <?php
 	require_once File::build_path(array("model", "Model.php"));
 
-	class Client{
+	class Commande{
 
 		private $idCommande;
 		private $date;
@@ -9,7 +9,13 @@
 		private $lignes;
 
 		public function __construct($data){
-		    //TODO
+		    if(!is_null($data)){
+		    	$idCommande	=	$data["idCommande"];
+		    	$date		=	$data["date"];
+		    	$etat		=	$data["etat"];
+		    	
+		    	//TODO get lignes by sql request
+		    }
 		}
 
 		public function __get($att){

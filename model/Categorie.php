@@ -3,13 +3,15 @@
 
 	class Categorie{
 
-		private $id;
+		private $idCategorie;
 		private $nom;
 
 		public function __construct($data){
-		    //TODO
+		    if(!is_null($data)){
+		    	$idCategorie 	= 	$data["idCategorie"];
+		    	$nom 			= 	$data["nom"];
+		    }
 		}
-
 
 		public function __get($att){
 			return $this->$att;
