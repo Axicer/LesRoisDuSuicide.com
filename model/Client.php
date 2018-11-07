@@ -1,10 +1,15 @@
 <?php
 	require_once File::build_path(array("model", "Model.php"));
 
-	class Categorie{
+	class Client{
 
-		private $id;
+		private $idClient;
 		private $nom;
+		private $prenom;
+		private $adresse;
+		private $codePostal;
+		private $ville;
+		private $privileges;
 
 		public function __construct($data){
 		    //TODO
