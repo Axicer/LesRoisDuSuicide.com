@@ -1,5 +1,6 @@
 <?php
 	require_once File::build_path(array("model", "Model.php"));
+	require_once File::build_path(array("model", "LignesCommandes.php"));
 
 	class Commande{
 
@@ -14,7 +15,12 @@
 		    	$date		=	$data["date"];
 		    	$etat		=	$data["etat"];
 		    	
-		    	//TODO get lignes by sql request
+		    	$sql		=	"SELECT * FROM LignesCommandes WHERE idCommande = :id";
+		    	$req_prep	=	Model::$pdo->prepare($sql);
+		    	$values		=	array("id" => $idCommande);
+                $req_prep 	->	execute($values);
+                $req_prep 	->	setFetchMode(PDO::FETCH_CLASS, "LigneCommande");
+                $tab		=	$req_prep->fetchAll();
 		    }
 		}
 
