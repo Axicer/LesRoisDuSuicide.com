@@ -20,8 +20,10 @@
 	                } else {
 	                  echo 'Une erreur est survenue !';
 	                }
-	                //¯\_(O w O)_/¯
+	                // ¯\_(O w O)_/¯
 	                die();
+			// X__X 
+			
 	            }
             }
         }
