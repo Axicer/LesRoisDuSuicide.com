@@ -9,7 +9,7 @@
 		private $qte;
 		
 		public function __construct($data){
-			if(!is_null($data){
+			if(!is_null($data)){
 				$idClient	=	$data['idClient'];
 				$idProduit	=	$data['idProduit'];
 				$idCommande	=	$data['idCommande'];
