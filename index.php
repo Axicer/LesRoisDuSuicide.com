@@ -11,7 +11,9 @@
 			<p>Le leader du surnaturel</p>
 		</header>
 		<main>
-			
+			<?php
+			require File::build_path(array("controller", "router.php"));
+			?>
 		</main>
 		<footer>
 			
