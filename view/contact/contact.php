@@ -5,13 +5,13 @@
         <title></title>
     </head>
     <body>
-	<form method="post" action="contacted.php">
+	<form method="post" action="index.php">
 	    <fieldset>
 		<!-- Légende du cadre entourant le formulaire -->
 		<legend>Nous contacter</legend>
 		<p>Vous souhaitez nous contacter ? Nous envoyer un gentil message ? Voici un formulaire pour y remédier ! </p>
 		<!--Formulaire "caché" pour pouvoir envoyer action=created à routeur.php-->
-		<input type="hidden" name="contacted" value="contacted"/>
+		<input type="hidden" name="action" value="contacted"/>
 		<p>
 		    <label for="immat">Nom</label> :
 		    <input type="text" placeholder="Entrer un nom" name="nom" id="nom" required/>
@@ -19,7 +19,7 @@
 		
 		<p>
 		    <label for="immat">Prénom</label> :
-		    <input type="text" placeholder="Entrer un prénom" name="immatriculation" id="immat" required/>
+		    <input type="text" placeholder="Entrer un prénom" name="prenom" id="immat" required/>
 		</p>
 		
 		<p>
