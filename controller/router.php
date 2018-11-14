@@ -13,11 +13,13 @@
 	//check for page valid
 	if(in_array($page, $pagesValide)){
 		//controller name
-		$cname = "Controller".ucfirst($controller);
+		$cname = "Controller".ucfirst($page);
 		if(class_exists($cname)){
 			//require new controller
             require File::build_path(array("controller", $cname));
         }else{
+        	//TODO
+        	echo $page;
             //send to page not found (error 404)
 			require File::build_path(array("view", "error", "404.php"));
         }
