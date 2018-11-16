@@ -81,12 +81,13 @@
 
 		public function addProduit($produit){
 			try{
-				$sql		=	"INSERT INTO Produits(idProduit, nom, qteStock, prix) VALUES (:idproduit, :nom, :qteStock, :prix);";
+				$sql		=	"INSERT INTO Produits(idProduit, nom, qteStock, prix) VALUES (:idproduit, :nom, :qteStock, :prix,:desc);";
 		    	$req_prep	=	Model::$pdo->prepare($sql);
-		    	$values		=	array("idProduit" 	=> 	$produit->$iProduit,
-		    						  "nom" 		=> 	$produit->$nom,
-		    						  "qteStock"	=> 	$produit->$qteStock,
-		    						  "prix"		=>	$produit->$prix);
+		    	$values		=	array("idProduit"   => 	$produit->$iProduit,
+						      "nom"	    => 	$produit->$nom,
+						      "qteStock"    => 	$produit->$qteStock,
+						      "prix"	    =>	$produit->$prix,
+						      "desc"	    =>	$produit->$description);
 	            $req_prep 	->	execute($values);
 	            return true;
         	}catch(Exception $e){

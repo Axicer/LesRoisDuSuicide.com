@@ -7,6 +7,7 @@
 		private $nom;
 		private $qteStock;
 		private $prix;
+		private $description;
 
 		public function __construct($data){
 			if(!is_null($data)){
@@ -14,6 +15,7 @@
 		    	$nom		=	$data["nom"];
 		    	$qteStock	=	$data["qteStock"];
 		    	$prix		=	$data["prix"];
+			$description	=	$data["description"];
 		    }
 		}
 
