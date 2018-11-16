@@ -16,12 +16,13 @@ class Query {
 
     public function rechercheProduit($mot) {
 	try {
-	    
+
 	    //Par cette requête, on va sélectionner tous les produits incluant $mot dans leur nom
 	    //et ceux incluant ce mot-clé dans leur description.
+	    //Le % représentent tous les caractères autour du mot recherché
 	    $sql = "SELECT * FROM Produits WHERE nom LIKE %:nom_tag%"
 		    . "UNION"
-		  . "SELECT * FROM Produits WHERE description LIKE %:nom_tag% ";
+		    . "SELECT * FROM Produits WHERE description LIKE %:nom_tag% ";
 	    $req_prep = Model::$pdo->prepare($sql);
 
 	    $values = array(
@@ -34,6 +35,26 @@ class Query {
 	    return $tab;
 	} catch (Exception $ex) {
 	    return false;
+	}
+    }
+
+    public function rechercheProduitMotsMultiples($mots) {
+	try {
+	    //Construction de la requête à partir des éléments du tableau
+	    $sql_1 = "SELECT * FROM Produits WHERE nom LIKE ";
+	    $sql_2 = "SELECT * FROM Produits WHERE description LIKE ";
+	    for ($i =1; $index < count($mots); $i++) {
+		$text = "tag_nom".$i;
+		
+		//SELECT... ...nom LIKE tag_nom1 OR tag_nom2
+		$sql_1 = $sql_1."OR nom LIKE".$text;
+		
+		$sql_2 = $sql_2."OR description LIKE".$text;
+	    }
+
+	    
+	} catch (Exception $ex) {
+	    
 	}
     }
 
