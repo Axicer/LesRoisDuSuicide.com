@@ -3,10 +3,10 @@
 
 	class Model{
 
-		static private $pdo = NULL;
+		public static $pdo;
 
-        public function __construct(){
-            if(is_null($pdo)){
+        public static function Init(){
+            if(!isset($pdo)){
 	            try{
 	                $hostname 		=	Conf::getHostname();
 	                $database_name	=	Conf::getDatabase();
@@ -22,8 +22,7 @@
 	                }
 	                // ¯\_(O w O)_/¯
 	                die();
-			// X__X 
-			
+					// X__X 
 	            }
             }
         }

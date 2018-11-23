@@ -1,4 +1,5 @@
 <?php
+	require_once File::build_path(array("model", "Model.php"));
 	require_once File::build_path(array("controller", "Util.php"));
 
 	$pagesValide = ["accueil", "contact", "login", "admin", "produits"];
@@ -8,23 +9,23 @@
 	if($page == NULL){
 		//send to page not found (error 404)
 		require File::build_path(array("view", "error", "404.php"));
-	}
-
-	//check for page valid
-	if(in_array($page, $pagesValide)){
-		//controller name
-		$cname = "Controller".ucfirst($page);
-		if(class_exists($cname)){
-			//require new controller
-            require File::build_path(array("controller", $cname));
-        }else{
-        	//TODO
-        	echo $page;
-            //send to page not found (error 404)
-			require File::build_path(array("view", "error", "404.php"));
-        }
 	}else{
-		//send to page not found (error 404)
-		require File::build_path(array("view", "error", "404.php"));
+		//init DB
+		Model::Init();
+		//check for page valid
+		if(in_array($page, $pagesValide)){
+			//controller name
+			$cname = "Controller".ucfirst($page);
+			if(file_exists(File::build_path(array("controller", $cname.".php")))){
+				//require new controller
+	            require File::build_path(array("controller", $cname.".php"));
+	        }else{
+	            //send to page not found (error 404)
+				require File::build_path(array("view", "error", "404.php"));
+	        }
+		}else{
+			//send to page not found (error 404)
+			require File::build_path(array("view", "error", "404.php"));
+		}
 	}
 ?>
