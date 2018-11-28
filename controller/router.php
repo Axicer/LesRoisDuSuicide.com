@@ -17,7 +17,6 @@
 			$cname = "Controller".ucfirst($page);
 			if(file_exists(File::build_path(array("controller", $cname.".php")))){
 				//require new controller
-				echo "coucou-router ";
 	            require File::build_path(array("controller", $cname.".php"));
 	        }else{
 	            //send to page not found (error 404)
