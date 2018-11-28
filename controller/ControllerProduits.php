@@ -3,14 +3,15 @@
 	require_once File::build_path(array("controller", "Query.php"));
 	require_once File::build_path(array("controller", "Util.php"));	
 
-	$validAction = ["list", "specific"];
-
 	class ControllerProduit{
 
 		public function __construct(){
-			
+
+			$validAction = ["list", "specific", "search"];
+
 			$action = Util::getFromGETorPOST("action");
-			if($action == NULL || !in_array($action, $validAction)){
+			if($action == NULL)$action = "list";
+			if(!in_array($action, $validAction)){
 				//call 404
 				$view = "404";
 				require File::build_path(array("view", "view.php"));
@@ -18,8 +19,8 @@
 				switch ($action) {
 					case "list":
 						$title = "Liste des produits";
-						$productsAmount = 50;
-						$products = Query::getAllProducts($productsAmount);
+						$products = Query::getAllProducts(50);
+						$productsAmount = sizeof($products);
 						//call view with view arg to "PRODUITS_LIST"
 						$view = "PRODUITS_LIST";
 						require File::build_path(array("view", "view.php"));
@@ -32,7 +33,7 @@
 							require File::build_path(array("view", "view.php"));
 						}else{
 							$product = Query::getSpecificProduct($id);
-							$title = $id->nom;
+							$title = $product->nom;
 							// call view with wiew arg to "PRODUITS_SHOW"
 							$view = "PRODUITS_SHOW";
 							require File::build_path(array("view", "view.php"));
@@ -45,8 +46,8 @@
 							$view = "404";
 							require File::build_path(array("view", "view.php"));
 						}else{
-							$productsAmount = 50;
 							$products = Query::rechercheProduit($name);
+							$productsAmount = sizeof($products);
 							$title = "Recherche produit";
 							//call view with view arg to "PRODUITS_SEARCH"
 							$view = "PRODUITS_SEARCH";

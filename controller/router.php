@@ -6,9 +6,8 @@
 	$page = Util::getFromGETorPOST("page");
 	//if not defined then send 404 page
 	if($page == NULL){
-		//call 404
-		$view = "404";
-		require File::build_path(array("view", "view.php"));
+		//call ControllerAccueil
+		require File::build_path(array("controller", "ControllerAccueil.php"));
 	}else{
 		//init DB
 		Model::Init();
@@ -20,11 +19,13 @@
 				//require new controller
 	            require File::build_path(array("controller", $cname.".php"));
 	        }else{
+	        	$title = "404 Error";
 	            //call 404
 				$view = "404";
 				require File::build_path(array("view", "view.php"));
 	        }
 		}else{
+			$title = "404 Error";
 			//call 404
 			$view = "404";
 			require File::build_path(array("view", "view.php"));

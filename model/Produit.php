@@ -10,7 +10,7 @@
 		public $description;
 		public $imageProduit;
 
-		public function __construct($data){
+		public function __construct($data = NULL){
 			if(!empty($data)){
 
 		    	$this->idProduit	=	$data["idProduit"];
