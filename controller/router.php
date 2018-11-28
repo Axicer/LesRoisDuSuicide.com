@@ -3,7 +3,6 @@
 	require_once File::build_path(array("controller", "Util.php"));
 
 	$pagesValide = ["accueil", "contact", "login", "admin", "produits"];
-echo "bonjour"; 
 	$page = Util::getFromGETorPOST("page");
 	//if not defined then send 404 page
 	if($page == NULL){

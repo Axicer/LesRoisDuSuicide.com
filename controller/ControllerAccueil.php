@@ -27,12 +27,14 @@
 								"description" => "OwO",
 								"imageProduit" => "img404.png"]);
 
-			echo "bonjour"; 
 			
+			echo "coucou-controller ";
 			$new_produits = array($p1,$p2,$p3,$p4);
+			$view = "ACCUEIL";
 
+			require File::build_path(array("view", "view.php"));
+		}
 	}
-
 	$controller = new ControllerAccueil();
 
 ?>
