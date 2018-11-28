@@ -1,0 +1,43 @@
+.tab_new_products{
+	display: flex;
+	justify-content: center;
+}
+
+.tab_new_products > div{
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	border: 1px black solid;
+}
+
+#new_prod_img{
+	text-align: center;
+	border: 1px black solid;
+}
+
+#new_prod_img img{
+	width: 100%;
+}
+
+/*------------------------------------------------*/
+
+.tab_promo_products{
+	display: flex;
+	justify-content: center;
+}
+
+.tab_promo_products > div{
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	border: 1px black solid;
+}
+
+#promo_prod_img{
+	text-align: center;
+	border: 1px black solid;
+}
+
+#promo_prod_img img{
+	width: 100%;
+}
