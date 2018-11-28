@@ -14,6 +14,7 @@
 			<?php
 				require_once "lib/File.php";
 				require File::build_path(array("controller", "router.php"));
+				echo "coucou-index ";
 			?>
 		</main>
 		<footer>

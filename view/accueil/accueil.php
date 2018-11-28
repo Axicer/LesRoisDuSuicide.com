@@ -14,6 +14,7 @@
 
 <!-- carousel bon plans/bienvenu/news/... -->
 
+				<?php echo "coucou- accueil ";?>
 
 		<h2>Nouveautés</h2>
 		<!-- recupere 2 tableaux : $new_produits - tableau des 4 produits et $new_imgs - tableau des 4 images associees -->
