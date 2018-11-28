@@ -14,6 +14,7 @@
 
 <!-- carousel bon plans/bienvenu/news/... -->
 
+
 		<h2>Nouveautés</h2>
 		<!-- recupere 2 tableaux : $new_produits - tableau des 4 produits et $new_imgs - tableau des 4 images associees -->
 			<!-- tableau de 4 -->
@@ -22,7 +23,7 @@
 					<!-- img + lien -->
 					<div id = "new_prod_img">
 						<!-- recup image + lien href -->
-						<a href = "?page=produits&id=<?php echo $new_produits[0]->idProduit;?>"> <img src = <?php echo $new_imgs[0];?> > </a>
+						<a href = "?page=produits&id=<?php echo $new_produits[0]->idProduit;?>"> <img src = res/img/<?php echo $new_produits[0]->imageProduit;?> > </a>
 					</div>
 					<!-- nom + lien, prix -->
 					<div id = "new_prod_nom&prix">
