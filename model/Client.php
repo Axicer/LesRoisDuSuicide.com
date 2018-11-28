@@ -10,6 +10,7 @@
 		private $codePostal;
 		private $ville;
 		private $privileges;
+		private $mdp;
 
 		public function __construct($data){
 		    if(!is_null($data)){
@@ -20,6 +21,7 @@
 		    	$codePostal	=	$data["codePostal"];
 		    	$ville		=	$data["ville"];
 		    	$privileges	=	$data["privileges"];
+		    	$mdp		=	$data["mdp"];
 		    }
 		}
 

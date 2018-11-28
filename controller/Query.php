@@ -82,13 +82,39 @@ class Query {
 		}
     }
 
-    public static function getMainImgFromProduit($id){
-    	$sql = "SELECT url FROM ImageProduits WHERE id=:id AND main=1";
+    public static function getSpecificProduct($id){
+    	$sql = "SELECT * FROM Produits WHERE idProduit=:id";
     	$req_prep = Model::$pdo->prepare($sql);
-    	$values = $arrayName = array('id' => $id);
+    	$values = $arrayName = array("id" => $id);
     	$req_prep->execute($values);
-    	//TODO find valable method to fetch as array
-    	$rep = $req_prep->fetch_array();
-    	return $rep['url'];
+    	$req_prep->setFetchMode(PDO::FETCH_CLASS, "Produit");
+		$tab = $req_prep->fetchAll();
+		return $tab[0];
+    }
+
+    public static function getAllProducts($amount){
+    	$sql = "SELECT * FROM Produits WHERE idProduit<:id";
+    	$req_prep = Model::$pdo->prepare($sql);
+    	$values = $arrayName = array("id" => $amount);
+    	$req_prep->execute($values);
+    	$req_prep->setFetchMode(PDO::FETCH_CLASS, "Produit");
+		$tab = $req_prep->fetchAll();
+		return $tab;
+    }
+    
+    public static function getClient($id){
+    	$sql = "SELECT * FROM Clients WHERE idClient=:id";
+    	$req_prep = Model::$pdo->prepare($sql);
+    	$values = $arrayName = array("id" => $id);
+    	$req_prep->execute($values);
+    	$req_prep->setFetchMode(PDO::FETCH_CLASS, "Client");
+		$tab = $req_prep->fetchAll();
+		return $tab[0];
+    }
+
+    public static function login($login, $mdp){
+    	$hashmdp = password_hash($mdp, PASSWORD_DEFAULT);
+    	$client = self::getClient($login);
+    	return $client->mdp == $hashmdp;
     }
 }

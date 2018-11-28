@@ -7,8 +7,9 @@ echo "bonjour";
 	$page = Util::getFromGETorPOST("page");
 	//if not defined then send 404 page
 	if($page == NULL){
-		//send to page not found (error 404)
-		require File::build_path(array("view", "error", "404.php"));
+		//call 404
+		$view = "404";
+		require File::build_path(array("view", "view.php"));
 	}else{
 		//init DB
 		Model::Init();
@@ -20,12 +21,14 @@ echo "bonjour";
 				//require new controller
 	            require File::build_path(array("controller", $cname.".php"));
 	        }else{
-	            //send to page not found (error 404)
-				require File::build_path(array("view", "error", "404.php"));
+	            //call 404
+				$view = "404";
+				require File::build_path(array("view", "view.php"));
 	        }
 		}else{
-			//send to page not found (error 404)
-			require File::build_path(array("view", "error", "404.php"));
+			//call 404
+			$view = "404";
+			require File::build_path(array("view", "view.php"));
 		}
 	}
 ?>
