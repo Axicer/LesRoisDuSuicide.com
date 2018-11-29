@@ -7,7 +7,7 @@
 
 		public function __construct(){
 
-			$validAction = ["list", "specific", "search"];
+			$validAction = ["list", "specific", "search", "form"];
 
 			$action = Util::getFromGETorPOST("action");
 			if($action == NULL)$action = "list";
@@ -53,6 +53,12 @@
 							$view = "PRODUITS_SEARCH";
 							require File::build_path(array("view", "view.php"));
 						}
+						break;
+					case "form":
+						$title = "Recherche produit";
+						//call view with view arg to "PRODUITS_FORM"
+						$view = "PRODUITS_FORM";
+						require File::build_path(array("view", "view.php"));
 						break;
 				}
 			}
