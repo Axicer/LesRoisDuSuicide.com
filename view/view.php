@@ -3,12 +3,15 @@
 	<meta charset="utf-8">
 	<link rel="icon" href="res/imgs/favicon.ico" />
 	<title><?php echo $title ?></title>
-	<link rel="stylesheet" type="text/css" href="/styles/main.css">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
 	<header>
-		<h1>Supernatural.com</h1>
-		<p>Le leader du surnaturel</p>
+		<img src="res/imgs/icon.png">
+		<div>
+			<h1>Supernatural.com</h1>
+			<p>Le leader du surnaturel</p>
+		</div>
 	</header>
 	<?php
 	$validViews = ["ACCUEIL", "PRODUITS_LIST", "PRODUITS_SHOW", "PRODUITS_SEARCH"];

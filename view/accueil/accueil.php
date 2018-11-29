@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="/styles/accueil/accueil.css">
+<link rel="stylesheet" type="text/css" href="styles/accueil/accueil.css">
 <main>
 	<h2>Nouveautés:</h2>
 	<!-- recupere 2 tableaux : $new_produits - tableau des 4 produits et $new_imgs - tableau des 4 images associees -->
@@ -96,7 +96,7 @@
 			<div id = "promo_prod_img">
 				<!-- recup image + lien href -->
 				<a href = "?page=produits&id=<?php echo $promo_produits[0]->idProduit;?>">
-					<img src = "/res/imgs/<?php echo $promo_produits[0]->imageProduit;?>" >
+					<img src = "res/imgs/<?php echo $promo_produits[0]->imageProduit;?>" >
 				</a>
 			</div>
 			<!-- nom + lien, prix -->
@@ -116,7 +116,7 @@
 			<div id = "promo_prod_img">
 				<!-- recup image + lien href -->
 				<a href = "?page=produits&id=<?php echo $promo_produits[1]->idProduit;?>">
-					<img src = "/res/imgs/<?php echo $promo_produits[1]->imageProduit;?>" >
+					<img src = "res/imgs/<?php echo $promo_produits[1]->imageProduit;?>" >
 				</a>
 			</div>
 			<!-- nom + lien, prix -->
@@ -136,7 +136,7 @@
 			<div id = "promo_prod_img">
 				<!-- recup image + lien href -->
 				<a href = "?page=produits&id=<?php echo $promo_produits[2]->idProduit;?>">
-					<img src = "/res/imgs/<?php echo $promo_produits[2]->imageProduit;?>" >
+					<img src = "res/imgs/<?php echo $promo_produits[2]->imageProduit;?>" >
 				</a>
 			</div>
 			<!-- nom + lien, prix -->
@@ -156,7 +156,7 @@
 			<div id = "promo_prod_img">
 				<!-- recup image + lien href -->
 				<a href = "?page=produits&id=<?php echo $promo_produits[3]->idProduit;?>">
-					<img src = "/res/imgs/<?php echo $promo_produits[3]->imageProduit;?>" >
+					<img src = "res/imgs/<?php echo $promo_produits[3]->imageProduit;?>" >
 				</a>
 			</div>
 			<!-- nom + lien, prix -->
