@@ -33,7 +33,7 @@
 		</div>
 	</header>
 	<?php
-	$validViews = ["ACCUEIL", "PRODUITS_LIST", "PRODUITS_SHOW", "PRODUITS_SEARCH", "PRODUITS_FORM"];
+	$validViews = ["ACCUEIL", "PRODUITS_LIST", "PRODUITS_SHOW", "PRODUITS_SEARCH", "PRODUITS_FORM", "LOGIN_FORM", "LOGIN_LOGGED", "CONTACT_FORM", "CONTACT_SEND"];
 
 	if (in_array($view, $validViews)) {
 		switch ($view) {
@@ -51,6 +51,18 @@
 			break;
 			case "PRODUITS_FORM":
 			require File::build_path(array("view", "produits", "search-form.php"));
+			break;
+			case "LOGIN_FORM":
+			require File::build_path(array("view", "login", "login.php"));
+			break;
+			case "LOGIN_LOGGED":
+			require File::build_path(array("view", "login", "logged.php"));
+			break;
+			case "CONTACT_FORM":
+			require File::build_path(array("view", "contact", "contact.php"));
+			break;
+			case "CONTACT_SEND":
+			require File::build_path(array("view", "contact", "contacted.php"));
 			break;
 		}
 	}else{

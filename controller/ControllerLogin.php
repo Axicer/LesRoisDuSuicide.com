@@ -2,14 +2,16 @@
 	require_once File::build_path(array("controller", "Query.php"));
 	require_once File::build_path(array("controller", "Util.php"));	
 
-	$validAction = ["form", "logged"];
-
 	class ControllerProduit{
 
 		public function __construct(){
 			
+			$validAction = ["form", "logged"];
+
 			$action = Util::getFromGETorPOST("action");
-			if($action == NULL || !in_array($action, $validAction)){
+			if($action == NULL)$action = "form";
+			if(!in_array($action, $validAction)){
+				$title = "404";
 				//call 404
 				$view = "404";
 				require File::build_path(array("view", "view.php"));
