@@ -13,22 +13,22 @@
 		<!--Formulaire "caché" pour pouvoir envoyer action=created à routeur.php-->
 		<input type="hidden" name="action" value="contacted"/>
 		<p>
-		    <label for="immat">Nom</label> :
+		    <label for="nom">Nom</label> :
 		    <input type="text" placeholder="Entrer un nom" name="nom" id="nom" required/>
 		</p>
 		
 		<p>
-		    <label for="immat">Prénom</label> :
-		    <input type="text" placeholder="Entrer un prénom" name="prenom" id="immat" required/>
+		    <label for="prenom">Prénom</label> :
+		    <input type="text" placeholder="Entrer un prénom" name="prenom" id="prenom" required/>
 		</p>
 		
 		<p>
-		    <label for="marque">E-mail</label> :
+		    <label for="email">E-mail</label> :
 		    <input type="text" placeholder="exemple@gmail.com" name="email" id="email" required/>
 		</p> 	
 
 		<p>
-		    <label for="color">Votre message</label> :
+		    <label for="message">Votre message</label> :
 		    <input type="text" placeholder="Entrez votre message" name="message" id="message" required/>
 		</p> 				
 
