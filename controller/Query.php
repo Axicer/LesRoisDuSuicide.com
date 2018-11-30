@@ -102,19 +102,21 @@ class Query {
 		return $tab;
 	}
 
-	public static function getClient($id){
-		$sql = "SELECT * FROM Clients WHERE idClient=:id";
+	public static function getClient($login){
+		$sql = "SELECT * FROM Clients WHERE login=:login";
 		$req_prep = Model::$pdo->prepare($sql);
-		$values = $arrayName = array("id" => $id);
+		$values = $arrayName = array("login" => $login);
 		$req_prep->execute($values);
 		$req_prep->setFetchMode(PDO::FETCH_CLASS, "Client");
 		$tab = $req_prep->fetchAll();
+		if(count($tab) == 0)return NULL;
 		return $tab[0];
 	}
 
 	public static function login($login, $mdp){
-		$hashmdp = password_hash($mdp, PASSWORD_DEFAULT);
+		$hashmdp = hash("sha256", $mdp);
 		$client = self::getClient($login);
+		if($client == NULL)return false;
 		return $client->mdp == $hashmdp;
 	}
 }

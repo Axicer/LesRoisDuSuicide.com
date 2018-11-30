@@ -42,14 +42,29 @@
 			<div class="navbar_main_item" id="contact">
 				<a href="./?page=contact">Contact</a>
 			</div>
-			<div class="navbar_main_item" id="login">
-				<a href="./?page=login">Connexion</a>
-			</div>
+			<?php
+				if(array_key_exists("connected", $_COOKIE)){
+					$connected = $_COOKIE["connected"];
+					if($connected) {
+						echo "<div class=\"navbar_main_item\" id=\"deconnect\">";
+						echo "<a href=\"./?page=login&action=deconnect\">Deconnexion</a>";
+						echo "</div>";
+					}else{
+						echo "<div class=\"navbar_main_item\" id=\"login\">";
+						echo "<a href=\"./?page=login\">Connexion</a>";
+						echo "</div>";
+					}
+				}else{
+					echo "<div class=\"navbar_main_item\" id=\"login\">";
+					echo "<a href=\"./?page=login\">Connexion</a>";
+					echo "</div>";
+				}
+			?>
 		</div>
 	</header>
 	<?php
 	$validViews = ["ACCUEIL", "PRODUITS_LIST", "PRODUITS_SHOW", "PRODUITS_SEARCH",
-	 "PRODUITS_FORM", "LOGIN_FORM", "LOGIN_LOGGED", "CONTACT_FORM", "CONTACT_SEND",
+	 "PRODUITS_FORM", "LOGIN_FORM", "LOGIN_FORM_ERROR", "LOGIN_LOGGED", "LOGIN_DECONNECT", "CONTACT_FORM", "CONTACT_SEND",
 	 "PANIER", "ABOUT"];
 
 	if (in_array($view, $validViews)) {
@@ -72,8 +87,14 @@
 			case "LOGIN_FORM":
 			require File::build_path(array("view", "login", "login.php"));
 			break;
+			case "LOGIN_FORM_ERROR":
+			require File::build_path(array("view", "login", "form-error.php"));
+			break;
 			case "LOGIN_LOGGED":
 			require File::build_path(array("view", "login", "logged.php"));
+			break;
+			case "LOGIN_DECONNECT":
+			require File::build_path(array("view", "login", "disconnected.php"));
 			break;
 			case "CONTACT_FORM":
 			require File::build_path(array("view", "contact", "contact.php"));
@@ -89,6 +110,7 @@
 			break;
 		}
 	}else{
+		$title = "404";
 		//call 404
 		$view = "404";
 		require File::build_path(array("view", "error", "404.php"));

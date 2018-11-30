@@ -12,7 +12,7 @@
 		private $privileges;
 		private $mdp;
 
-		public function __construct($data){
+		public function __construct($data = NULL){
 		    if(!is_null($data)){
 		    	$idClient	=	$data["idClient"];
 		    	$nom		=	$data["nom"];

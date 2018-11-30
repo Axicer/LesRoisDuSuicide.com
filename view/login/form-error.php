@@ -1,4 +1,5 @@
 <p>Connectez vous a votre site favori de science occulte !</p>
+<p id="error">Combinaison login/mot de passe invalide ou inexistant !<p/>
 <form action="./?page=login" method="post">
 	<fieldset>
 		<!--Formulaire "caché" pour pouvoir envoyer action=created à routeur.php-->
