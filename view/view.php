@@ -30,10 +30,18 @@
 			<div class="navbar_main_item" id="contact">
 				<a href="./?page=contact">Contact</a>
 			</div>
+			<div class="navbar_main_item" id="panier">
+				<a href="./?page=panier">Panier</a>
+			</div>
+			<div class="navbar_main_item" id="about">
+				<a href="./?page=about">A propos</a>
+			</div>
 		</div>
 	</header>
 	<?php
-	$validViews = ["ACCUEIL", "PRODUITS_LIST", "PRODUITS_SHOW", "PRODUITS_SEARCH", "PRODUITS_FORM", "LOGIN_FORM", "LOGIN_LOGGED", "CONTACT_FORM", "CONTACT_SEND"];
+	$validViews = ["ACCUEIL", "PRODUITS_LIST", "PRODUITS_SHOW", "PRODUITS_SEARCH",
+	 "PRODUITS_FORM", "LOGIN_FORM", "LOGIN_LOGGED", "CONTACT_FORM", "CONTACT_SEND",
+	 "PANIER", "ABOUT"];
 
 	if (in_array($view, $validViews)) {
 		switch ($view) {
@@ -63,6 +71,12 @@
 			break;
 			case "CONTACT_SEND":
 			require File::build_path(array("view", "contact", "contacted.php"));
+			break;
+			case "PANIER":
+			require File::build_path(array("view", "panier", "panier.php"));
+			break;
+			case "ABOUT":
+			require File::build_path(array("view", "about", "about.php"));
 			break;
 		}
 	}else{
