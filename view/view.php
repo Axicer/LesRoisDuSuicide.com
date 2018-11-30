@@ -19,8 +19,8 @@
 		<div id="pres">
 			<img src="res/imgs/icon.png">
 			<div>
-				<h1>Supernatural.com</h1>
-				<p>Le leader du surnaturel</p>
+				<h1>Le Petit Occultiste.com</h1>
+				<p>Les arts occultes à portée de main !</p>
 			</div>
 		</div>
 		<div id="navbar">

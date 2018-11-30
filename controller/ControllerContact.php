@@ -28,8 +28,6 @@
 						$email = Util::getFromPost("email");
 						$message = Util::getFromPost("message");
 
-						//TODO envoyer le message
-
 						$title= "Message envoyé";
 						//call view with view arg to "CONTACT_SEND"
 						$view = "CONTACT_SEND";
