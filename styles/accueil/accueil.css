@@ -1,6 +1,9 @@
+
 .tab_new_products{
 	display: flex;
 	justify-content: center;
+	margin: 2%;
+	text-align: center;
 }
 
 .tab_new_products > div{
@@ -8,11 +11,13 @@
 	display: flex;
 	flex-direction: column;
 	border: 1px black solid;
+	border-bottom-right-radius: 25px;
+	border-top-left-radius: 25px; 
+
 }
 
 #new_prod_img{
-	text-align: center;
-	border: 1px black solid;
+	text-align: center;;
 }
 
 #new_prod_img img{
@@ -24,6 +29,8 @@
 .tab_promo_products{
 	display: flex;
 	justify-content: center;
+	margin: 2%;
+	text-align: center;
 }
 
 .tab_promo_products > div{
@@ -31,13 +38,19 @@
 	display: flex;
 	flex-direction: column;
 	border: 1px black solid;
+	border-bottom-right-radius: 25px;
+	border-top-left-radius: 25px; 
 }
 
 #promo_prod_img{
 	text-align: center;
-	border: 1px black solid;
 }
 
 #promo_prod_img img{
 	width: 100%;
+}
+
+h2 {
+	margin-left: 5%;
+	margin-top: 10px;
 }
