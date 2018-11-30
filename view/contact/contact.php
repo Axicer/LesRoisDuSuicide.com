@@ -5,37 +5,59 @@
         <title></title>
     </head>
     <body>
-	<form method="post" action="index.php">
-	    <fieldset>
-		<!-- Légende du cadre entourant le formulaire -->
-		<legend>Nous contacter</legend>
-		<p>Vous souhaitez nous contacter ? Nous envoyer un gentil message ? Voici un formulaire pour y remédier ! </p>
-		<!--Formulaire "caché" pour pouvoir envoyer action=created à routeur.php-->
-		<input type="hidden" name="action" value="contacted"/>
-		<p>
-		    <label for="nom">Nom</label> :
-		    <input type="text" placeholder="Entrer un nom" name="nom" id="nom" required/>
-		</p>
-		
-		<p>
-		    <label for="prenom">Prénom</label> :
-		    <input type="text" placeholder="Entrer un prénom" name="prenom" id="prenom" required/>
-		</p>
-		
-		<p>
-		    <label for="email">E-mail</label> :
-		    <input type="text" placeholder="exemple@gmail.com" name="email" id="email" required/>
-		</p> 	
+		<form method="post" action= index.php>
+			<input type="hidden" name="page" value="contact"/>
+			<input type="hidden" name="action" value="send"/>
+			<fieldset>
+				<!-- Légende du cadre entourant le formulaire -->
+				<legend>Nous contacter</legend>
+				<p>Vous souhaitez nous contacter ? Nous envoyer un gentil message ? Voici un formulaire pour y remédier ! </p>
+				<!--Formulaire "caché" pour pouvoir envoyer action=contacted à routeur.php-->
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								<label for="nom">Nom</label> :
+							</td>
+							<td>
+								<input type="text" placeholder="Entrer un nom" name="nom" id="nom" required/>
+							</td>
+						</tr>
 
-		<p>
-		    <label for="message">Votre message</label> :
-		    <input type="text" placeholder="Entrez votre message" name="message" id="message" required/>
-		</p> 				
+						<tr>
+							<td>
+								<label for="prenom">Prénom</label> :
+							</td>
+							<td>
+								<input type="text" placeholder="Entrer un prénom" name="prenom" id="prenom" required/>
+							</td>
+						</tr>
 
-		<p>
-		    <input type="submit" value="Envoyer" />
-		</p>
-	    </fieldset> 
-	</form>
+						<tr>
+							<td>
+								<label for="email">E-mail</label> :
+							</td>
+							<td>
+								<input type="text" placeholder="exemple@gmail.com" name="email" id="email" required/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="message">Votre message</label> :
+							</td>
+							<td>
+								<textarea name="Text1" placeholder="Entrez votre message" name="message" id="message" required cols="40" rows="4"></textarea>
+							</td>
+						</tr>				
+
+						<tr>
+							<td>
+								<input type="submit" value="Envoyer" />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</fieldset> 
+		</form>
     </body>
 </html>
