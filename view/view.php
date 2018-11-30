@@ -7,6 +7,15 @@
 </head>
 <body>
 	<header>
+		<?php
+			if(array_key_exists("connected", $_COOKIE)){
+				$connected = $_COOKIE["connected"];
+				if($connected){
+					$login = $_COOKIE["login"];
+					echo "<p id=\"connexion_status\">connecté en tant que $login</p>";
+				}
+			}
+		?>
 		<div id="pres">
 			<img src="res/imgs/icon.png">
 			<div>
@@ -24,17 +33,17 @@
 					<a href="./?page=produits&action=form">Recherche</a>
 				</div>
 			</div>
-			<div class="navbar_main_item" id="login">
-				<a href="./?page=login">Login</a>
-			</div>
-			<div class="navbar_main_item" id="contact">
-				<a href="./?page=contact">Contact</a>
-			</div>
 			<div class="navbar_main_item" id="panier">
 				<a href="./?page=panier">Panier</a>
 			</div>
 			<div class="navbar_main_item" id="about">
 				<a href="./?page=about">A propos</a>
+			</div>
+			<div class="navbar_main_item" id="contact">
+				<a href="./?page=contact">Contact</a>
+			</div>
+			<div class="navbar_main_item" id="login">
+				<a href="./?page=login">Connexion</a>
 			</div>
 		</div>
 	</header>
