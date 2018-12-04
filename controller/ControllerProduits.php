@@ -12,6 +12,7 @@
 			$action = Util::getFromGETorPOST("action");
 			if($action == NULL)$action = "list";
 			if(!in_array($action, $validAction)){
+				$title = "404";
 				//call 404
 				$view = "404";
 				require File::build_path(array("view", "view.php"));

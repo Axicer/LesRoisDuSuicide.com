@@ -33,10 +33,8 @@
 						if($valid){
 							$title = "Connexion reussie !";
 							$view = "LOGIN_LOGGED";
-							setcookie("connected", true);
-							$_COOKIE["connected"] = true;
-							setcookie("login", $id);
-							$_COOKIE["connected"] = $id;
+							$_SESSION["connected"] = true;
+							$_SESSION["login"] = $id;
 						}else{
 							$title = "Echec connexion";
 							$view = "LOGIN_FORM_ERROR";
@@ -45,9 +43,8 @@
 						require File::build_path(array("view", "view.php"));
 						break;
 					case "deconnect":
-						//set connected
-						setcookie("connected", false);
-						$_COOKIE["connected"] = false;
+						//set disconnected
+						unset($_SESSION['connected']);
 
 						$title = "Deconnecté";
 						//call view with view arg to "LOGIN_DECONNECT"
