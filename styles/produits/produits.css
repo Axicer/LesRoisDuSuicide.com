@@ -1,0 +1,33 @@
+.un_produit{
+    background-color: rgba(193,100,100,1);
+    margin: 20px;
+}
+
+.info_produit{
+    
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    
+    
+}
+
+.info_produit > div{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.image_P {
+    max-height: 100px;
+    max-width: 100px;
+    
+    min-height: 50px;
+    min-width: 50px;
+    
+    padding: 5px;
+    
+}
+
