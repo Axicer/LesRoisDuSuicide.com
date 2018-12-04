@@ -42,7 +42,7 @@
 							}
 						}
 
-						setcookie("panier", serialize($panierContent));
+						setcookie("panier", json_encode($panierContent));
 						
 
 						$title = "Objet supprimé !";
@@ -57,7 +57,7 @@
 						if($q == NULL || $q < 1)$q = 1;
 						
 						//get panier content
-						$panierContent = array_key_exists("panier", $_COOKIE) ? $_COOKIE["panier"] : array();
+						$panierContent = array_key_exists("panier", $_COOKIE) ? json_decode($_COOKIE["panier"]) : array();
 						
 						$found = false;
 						foreach ($panierContent as $key => $item) {
@@ -77,7 +77,7 @@
 						}
 
 						//set cookie
-						setcookie("panier", serialize($panierContent));
+						setcookie("panier", json_encode($panierContent));
 
 
 						$title = "Objet ajouté !";
