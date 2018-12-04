@@ -8,10 +8,10 @@
 <body>
 	<header>
 		<?php
-			if(array_key_exists("connected", $_COOKIE)){
-				$connected = $_COOKIE["connected"];
+			if(array_key_exists("connected", $_SESSION)){
+				$connected = $_SESSION["connected"];
 				if($connected){
-					$login = $_COOKIE["login"];
+					$login = $_SESSION["login"];
 					echo "<p id=\"connexion_status\">connecté en tant que $login</p>";
 				}
 			}
@@ -43,8 +43,8 @@
 				<a href="./?page=contact">Contact</a>
 			</div>
 			<?php
-				if(array_key_exists("connected", $_COOKIE)){
-					$connected = $_COOKIE["connected"];
+				if(array_key_exists("connected", $_SESSION)){
+					$connected = $_SESSION["connected"];
 					if($connected) {
 						echo "<div class=\"navbar_main_item\" id=\"deconnect\">";
 						echo "<a href=\"./?page=login&action=deconnect\">Deconnexion</a>";
@@ -65,7 +65,7 @@
 	<?php
 	$validViews = ["ACCUEIL", "PRODUITS_LIST", "PRODUITS_SHOW", "PRODUITS_SEARCH",
 	 "PRODUITS_FORM", "LOGIN_FORM", "LOGIN_FORM_ERROR", "LOGIN_LOGGED", "LOGIN_DECONNECT", "CONTACT_FORM", "CONTACT_SEND",
-	 "PANIER", "ABOUT"];
+	 "PANIER", "ABOUT", "PANIER_LIST", "PANIER_ADDED", "PANIER_DELETED"];
 
 	if (in_array($view, $validViews)) {
 		switch ($view) {
@@ -108,12 +108,18 @@
 			case "ABOUT":
 			require File::build_path(array("view", "about", "about.php"));
 			break;
+			case "PANIER_LIST":
+			require File::build_path(array("view", "panier", "panier_list.php"));
+			break;
+			case "PANIER_ADDED":
+			require File::build_path(array("view", "panier", "panier_added.php"));
+			break;
+			case "PANIER_DELETED":
+			require File::build_path(array("view", "panier", "panier_deleted.php"));
+			break;
 		}
 	}else{
-		$title = "404";
-		//call 404
-		$view = "404";
-		require File::build_path(array("view", "error", "404.php"));
+		echo "View not found $view";
 	}
 	?>
 </body>

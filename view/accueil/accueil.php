@@ -8,7 +8,7 @@
 			<!-- img + lien -->
 			<div id = "new_prod_img">
 				<!-- recup image + lien href -->
-				<a href = "?page=produits&id=<?php echo $new_produits[0]->idProduit;?>">
+				<a href = "?page=produits&action=specific&id=<?php echo $new_produits[0]->idProduit;?>">
 					<img src = "res/imgs/<?php echo $new_produits[0]->imageProduit;?>">
 				</a>
 			</div>
