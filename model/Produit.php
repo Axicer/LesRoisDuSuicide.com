@@ -21,5 +21,15 @@
 				$this->imageProduit	=	$data["imageProduit"];
 		    }
 		}
+		
+		public function __get($att){
+			return $this->$att;
+		}
+		
+		public function __set($att,$val){
+			$this->$att = $val;
+		}
+		
+		
 	}
 ?>
