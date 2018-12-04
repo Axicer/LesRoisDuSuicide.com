@@ -115,11 +115,12 @@
 			require File::build_path(array("view", "panier", "panier_added.php"));
 			break;
 			case "PANIER_DELETED":
-			require File::build_path(array("view", "panier", "panier_deleted.php"));
+			require File::build_path(array("view", "panier", "panier_list.php"));
 			break;
 		}
 	}else{
-		echo "View not found $view";
+		$title	= "404";
+		require File::build_path(array("view", "error", "404.php"));
 	}
 	?>
 </body>
