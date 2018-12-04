@@ -1,6 +1,7 @@
 <?php
 	require_once File::build_path(array("model", "Produit.php"));
 	require_once File::build_path(array("model", "PanierItem.php"));
+	require_once File::build_path(array("controller", "Query.php"));
 	
 	class ControllerPanier{
 
@@ -50,15 +51,10 @@
 						break;
 					case "add":
 						//get new product
-						$new_product = unserialize(Util::getFromGETorPOST("new_product"));
+						$id = Util::getFromGETorPOST("new_product");
+						$product = Query::getSpecificProduct($id);
 						$q = Util::getFromGETorPOST("quantity");
-						if($new_product == NULL){
-							$title = "404 - Product not found";
-							//call 404
-							$view = "404";
-							require File::build_path(array("view", "view.php"));
-						}
-						if($q == NULL)$q = 1;
+						if($q == NULL || $q < 1)$q = 1;
 						
 						//get panier content
 						$panierContent = array_key_exists("panier", $_COOKIE) ? $_COOKIE["panier"] : array();
@@ -68,7 +64,7 @@
 							//current product is $p
 							$p = $item->product;
 							//if id's are matching
-							if($p->idProduit == $new_product->idProduit){
+							if($p->idProduit == $id){
 								//update quantity for this item
 								$item->quantity += $q;
 								$found = true;
@@ -77,7 +73,7 @@
 						}
 						if(!$found){
 							//add new product to panier
-							$panierContent[] = new PanierItem($new_product, $q);
+							$panierContent[] = new PanierItem($product, $q);
 						}
 
 						//set cookie
