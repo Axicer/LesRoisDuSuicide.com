@@ -4,7 +4,7 @@
 		<!--Formulaire "caché" pour pouvoir envoyer action=created à routeur.php-->
 		<div id="login_field">
 		    <label for="login">Login</label> :
-		    <input type="text" placeholder="login" name="login" id="login" required/>
+		    <input type="text" placeholder="login" name="login" id="login_field" required/>
 		</div>
 		<div id="mdp">
 		    <label for="mdp">Mot de passe</label> :
