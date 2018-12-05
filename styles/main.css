@@ -7,6 +7,12 @@ body{
 	background-attachment: fixed;
 }
 
+header{
+    position: sticky;
+    width: 100%;
+    top: 0px;
+}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -17,7 +23,7 @@ body{
 	height: 100px;
 	display: flex;
 	justify-content: center;
-	background-color: rgba(0, 0, 0,0.3);
+	background-color: rgb(200, 200, 200);
 }
 
 #pres div{
@@ -37,6 +43,8 @@ body{
 	height: 50px;
 	justify-content: center;
 	position: sticky;
+	background-color: #bfbfbf;
+	
 }
 
 .navbar_main_item{

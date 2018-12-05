@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
+	<div class ="false_header"></div>
 	<header>
 		<?php
 			if(array_key_exists("connected", $_SESSION)){
