@@ -3,25 +3,27 @@
 
 	class Client{
 
-		private $idClient;
-		private $nom;
-		private $prenom;
-		private $adresse;
-		private $codePostal;
-		private $ville;
-		private $privileges;
-		private $mdp;
+		public $idClient;
+		public $login;
+		public $nom;
+		public $prenom;
+		public $adresse;
+		public $codePostal;
+		public $ville;
+		public $privileges;
+		public $mdp;
 
 		public function __construct($data = NULL){
 		    if(!is_null($data)){
-		    	$idClient	=	$data["idClient"];
-		    	$nom		=	$data["nom"];
-		    	$prenom		=	$data["prenom"];
-		    	$adresse	=	$data["adresse"];
-		    	$codePostal	=	$data["codePostal"];
-		    	$ville		=	$data["ville"];
-		    	$privileges	=	$data["privileges"];
-		    	$mdp		=	$data["mdp"];
+		    	$this->idClient		=	$data["idClient"];
+		    	$this->login		=	$data["login"];
+		    	$this->nom			=	$data["nom"];
+		    	$this->prenom		=	$data["prenom"];
+		    	$this->adresse		=	$data["adresse"];
+		    	$this->codePostal	=	$data["codePostal"];
+		    	$this->ville		=	$data["ville"];
+		    	$this->privileges	=	$data["privileges"];
+		    	$this->mdp			=	$data["mdp"];
 		    }
 		}
 

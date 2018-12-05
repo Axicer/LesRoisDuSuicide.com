@@ -85,7 +85,7 @@ class Query {
 	public static function getSpecificProduct($id){
 		$sql = "SELECT * FROM Produits WHERE idProduit=:id";
 		$req_prep = Model::$pdo->prepare($sql);
-		$values = $arrayName = array("id" => $id);
+		$values = array("id" => $id);
 		$req_prep->execute($values);
 		$req_prep->setFetchMode(PDO::FETCH_CLASS, "Produit");
 		$tab = $req_prep->fetchAll();
@@ -95,7 +95,7 @@ class Query {
 	public static function getAllProducts($amount){
 		$sql = "SELECT * FROM Produits WHERE idProduit<:id";
 		$req_prep = Model::$pdo->prepare($sql);
-		$values = $arrayName = array("id" => $amount);
+		$values = array("id" => $amount);
 		$req_prep->execute($values);
 		$req_prep->setFetchMode(PDO::FETCH_CLASS, "Produit");
 		$tab = $req_prep->fetchAll();
@@ -105,12 +105,26 @@ class Query {
 	public static function getClient($login){
 		$sql = "SELECT * FROM Clients WHERE login=:login";
 		$req_prep = Model::$pdo->prepare($sql);
-		$values = $arrayName = array("login" => $login);
+		$values = array("login" => $login);
 		$req_prep->execute($values);
 		$req_prep->setFetchMode(PDO::FETCH_CLASS, "Client");
 		$tab = $req_prep->fetchAll();
 		if(count($tab) == 0)return NULL;
 		return $tab[0];
+	}
+
+	public static function pushNewClient($clientData){
+		$sql = "INSERT INTO Clients(login, nom, prenom, adresse, codePostal, ville, priviliges, mdp) VALUES (:login, :nom, :prenom, :adresse, :codePostal, :ville, 0, :mdp)";
+		$req_prep = Model::$pdo->prepare($sql);
+		$values = array("login" => $clientData->login,
+						"nom" => $clientData->nom,
+						"prenom" => $clientData->prenom,
+						"adresse" => $clientData->adresse,
+						"codePostal" => $clientData->codePostal,
+						"ville" => $clientData->ville,
+						"mdp" => $clientData->mdp);
+		$req_prep->execute($values);
+
 	}
 
 	public static function login($login, $mdp){
