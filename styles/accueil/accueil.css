@@ -13,14 +13,15 @@
 	border: 1px black solid;
 	border-bottom-right-radius: 25px;
 	border-top-left-radius: 25px; 
+	background-color: rgba(255, 255, 255, 0.9);
 
 }
 
-#new_prod_img{
+.new_prod_img{
 	text-align: center;;
 }
 
-#new_prod_img img{
+.new_prod_img img{
 	width: 100%;
 }
 
@@ -40,13 +41,14 @@
 	border: 1px black solid;
 	border-bottom-right-radius: 25px;
 	border-top-left-radius: 25px; 
+	background-color: rgba(255, 255, 255, 0.9);
 }
 
-#promo_prod_img{
+.promo_prod_img{
 	text-align: center;
 }
 
-#promo_prod_img img{
+.promo_prod_img img{
 	width: 100%;
 }
 

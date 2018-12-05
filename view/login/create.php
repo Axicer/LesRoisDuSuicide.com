@@ -1,14 +1,12 @@
-<p>Connectez vous a votre site favori de science occulte !</p>
-<form action="./?page=login" method="post">
+<p>Creer un compte sur votre site favori de science occulte !</p>
+<form>
 	<fieldset>
-<<<<<<< HEAD
-		<!--Formulaire "caché" pour pouvoir envoyer action=created à routeur.php-->
-		<div id="login_field">
-=======
 		<div id="login">
->>>>>>> 8b325dd7a304ca5c0e2048b5835cbc22d89bc062
 		    <label for="login">Login</label> :
-		    <input type="text" placeholder="login" name="login" id="login_field" required/>
+		    <input type="text" placeholder="login" name="login" id="login" required/>
+		</div>
+		<div id="data">
+			<!-- TODO -->
 		</div>
 		<div id="mdp">
 		    <label for="mdp">Mot de passe</label> :
