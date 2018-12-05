@@ -114,16 +114,9 @@ class Query {
 	}
 
 	public static function pushNewClient($clientData){
-		$sql = "INSERT INTO Clients(login, nom, prenom, adresse, codePostal, ville, priviliges, mdp) VALUES (:login, :nom, :prenom, :adresse, :codePostal, :ville, 0, :mdp)";
+		$sql = "INSERT INTO Clients(login, nom, prenom, adresse, codePostal, ville, mdp) VALUES (:login, :nom, :prenom, :adresse, :codePostal, :ville, :mdp)";
 		$req_prep = Model::$pdo->prepare($sql);
-		$values = array("login" => $clientData->login,
-						"nom" => $clientData->nom,
-						"prenom" => $clientData->prenom,
-						"adresse" => $clientData->adresse,
-						"codePostal" => $clientData->codePostal,
-						"ville" => $clientData->ville,
-						"mdp" => $clientData->mdp);
-		$req_prep->execute($values);
+		$req_prep->execute($clientData);
 
 	}
 

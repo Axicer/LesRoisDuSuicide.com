@@ -19,7 +19,7 @@
 				switch ($action) {
 					case "list":
 						//get panier content	
-						$panierContent = array_key_exists("panier", $_COOKIE) ? $_COOKIE["panier"] : array();
+						$panierContent = array_key_exists("panier", $_COOKIE) ? json_decode($_COOKIE["panier"]) : array();
 						$panierAmount = count($panierContent);
 						$title = "Panier";
 						$view = "PANIER_LIST";

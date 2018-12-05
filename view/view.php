@@ -103,10 +103,10 @@
 			require File::build_path(array("view", "login", "create.php"));
 			break;
 			case "LOGIN_CREATE_ERROR":
-			require File::build_path(array("view", "panier", "create_error.php"));
+			require File::build_path(array("view", "login", "create_error.php"));
 			break;
 			case "LOGIN_CREATED":
-			require File::build_path(array("view", "panier", "created.php"));
+			require File::build_path(array("view", "login", "created.php"));
 			break;
 			case "CONTACT_FORM":
 			require File::build_path(array("view", "contact", "contact.php"));

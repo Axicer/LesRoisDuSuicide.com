@@ -7,7 +7,7 @@
 
 		public function __construct(){
 			
-			$validAction = ["form", "logged", "deconnect", "create_form", "create", "create_form_error"];
+			$validAction = ["form", "logged", "deconnect", "create_form", "create"];
 
 			$action = Util::getFromGETorPOST("action");
 			if($action == NULL)$action = "form";
@@ -29,11 +29,6 @@
 						$view = "LOGIN_CREATE";
 						require File::build_path(array("view", "view.php"));
 						break;
-					case "create_form_error":
-						$title = "Erreur - Creation de compte";
-						$view = "LOGIN_CREATE_ERROR";
-						require File::build_path(array("view", "view.php"));
-						break;
 					case "create":
 						$login = Util::getFromGETorPOST("login");
 						$nom = Util::getFromGETorPOST("nom");
@@ -45,23 +40,23 @@
 						$mdp2 = Util::getFromGETorPOST("mdp2");
 
 						if($mdp1 != $mdp2){
-							$title = "compte crée !";
+							$title = "Erreur - creation de compte";
 							$view = "LOGIN_CREATE_ERROR";
 							require File::build_path(array("view", "view.php"));
 						}else{
-							Query::pushNewClient(array("login" => $client->login,
-														"nom" => $client->nom,
-														"prenom" => $client->prenom,
-														"adresse" => $client->adresse,
-														"codePostal" => $client->codePostal,
-														"ville" => $client->ville,
-														"mdp" => hash("sha256", $client->mdp)));
+							Query::pushNewClient(array("login" => $login,
+														"nom" => $nom,
+														"prenom" => $prenom,
+														"adresse" => $adresse,
+														"codePostal" => $codePostal,
+														"ville" => $ville,
+														"mdp" => hash("sha256", $mdp1)));
 
 							$title = "compte crée !";
 							$view = "LOGIN_CREATED";
 							require File::build_path(array("view", "view.php"));
-							break;
 						}
+						break;
 					case "logged":
 						$id = Util::getFromGETorPOST("login");
 						$mdp = Util::getFromGETorPOST("mdp");
