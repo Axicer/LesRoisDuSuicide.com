@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="styles/connexion/main.css">
 <p>Connectez vous a votre site favori de science occulte !</p>
 <form action="./?page=login" method="post">
 	<fieldset>
