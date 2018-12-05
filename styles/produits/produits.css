@@ -1,6 +1,15 @@
 .un_produit{
-    background-color: rgba(193,100,100,1);
+    background-color: rgba(100,100,100,0.5);
     margin: 20px;
+}
+
+.param{
+    display: flex;
+    flex-direction: column;
+}
+
+.param a{
+    margin: 5px;
 }
 
 .info_produit{

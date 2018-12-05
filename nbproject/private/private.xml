@@ -2,15 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/ann2/pechh/public_html/machin/controller/ControllerProduits.php</file>
-            <file>file:/home/ann2/pechh/public_html/machin/model/Client.php</file>
-            <file>file:/home/ann2/pechh/public_html/machin/styles/produits/produits.css</file>
-            <file>file:/home/ann2/pechh/public_html/machin/styles/main.css</file>
-            <file>file:/home/ann2/pechh/public_html/machin/view/view.php</file>
-            <file>file:/home/ann2/pechh/public_html/machin/view/produits/list.php</file>
-            <file>file:/home/ann2/pechh/public_html/machin/styles/accueil/accueil.css</file>
-            <file>file:/home/ann2/pechh/public_html/machin/lib/File.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
