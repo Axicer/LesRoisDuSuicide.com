@@ -2,7 +2,7 @@
 <form action="./?page=login" method="post">
 	<fieldset>
 		<!--Formulaire "caché" pour pouvoir envoyer action=created à routeur.php-->
-		<div id="login">
+		<div id="login_field">
 		    <label for="login">Login</label> :
 		    <input type="text" placeholder="login" name="login" id="login" required/>
 		</div>
