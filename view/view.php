@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -17,7 +18,7 @@
 			}
 		?>
 		<div id="pres">
-			<img src="res/imgs/icon.png">
+			<img src="res/imgs/icon.png" alt="icon">
 			<div>
 				<h1>Le Petit Occultiste.com</h1>
 				<p>Les arts occultes à portée de main !</p>
