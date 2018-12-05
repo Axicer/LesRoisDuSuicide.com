@@ -6,7 +6,8 @@
 		    <input type="text" placeholder="login" name="login" id="login" required/>
 		</div>
 		<div id="data">
-			<!-- TODO -->
+			<label for="nom">Nom</label> :
+			<input type="text" placeholder="Le Pen" name "nom" id="nom" required/>
 		</div>
 		<div id="mdp">
 		    <label for="mdp">Mot de passe</label> :
