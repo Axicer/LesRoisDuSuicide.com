@@ -1,12 +1,7 @@
 <p>Connectez vous a votre site favori de science occulte !</p>
 <form action="./?page=login" method="post">
 	<fieldset>
-<<<<<<< HEAD
-		<!--Formulaire "caché" pour pouvoir envoyer action=created à routeur.php-->
 		<div id="login_field">
-=======
-		<div id="login">
->>>>>>> 8b325dd7a304ca5c0e2048b5835cbc22d89bc062
 		    <label for="login">Login</label> :
 		    <input type="text" placeholder="login" name="login" id="login_field" required/>
 		</div>
