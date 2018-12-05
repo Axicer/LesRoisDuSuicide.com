@@ -3,11 +3,11 @@
 
 	class PanierItem{
 
-		public $product;
+		public $id;
 		public $quantity;
 
-		public function __construct($product, $quantity){
-			$this->product = $product;
+		public function __construct($id, $quantity){
+			$this->id = $id;
 			$this->quantity = $quantity;
 		}
 

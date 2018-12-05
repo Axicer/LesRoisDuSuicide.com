@@ -29,13 +29,11 @@
 						//get id
 						$to_del = Util::getFromGETorPOST("id");
 						//get panier content
-						$panierContent = array_key_exists("panier", $_COOKIE) ? $_COOKIE["panier"] : array();
+						$panierContent = array_key_exists("panier", $_COOKIE) ? json_decode($_COOKIE["panier"]) : array();
 						
 						foreach ($panierContent as $key => $item) {
-							//current product is $p
-							$p = $item->product;
 							//if id's are matching
-							if($p->idProduit == $to_del){
+							if($item->id == $to_del){
 								//unset content
 								unset($panierContent[$key]);
 								break;
@@ -51,20 +49,17 @@
 						break;
 					case "add":
 						//get new product
-						$id = Util::getFromGETorPOST("new_product");
-						$product = Query::getSpecificProduct($id);
+						$id = Util::getFromGETorPOST("id");
 						$q = Util::getFromGETorPOST("quantity");
 						if($q == NULL || $q < 1)$q = 1;
-						
+
 						//get panier content
 						$panierContent = array_key_exists("panier", $_COOKIE) ? json_decode($_COOKIE["panier"]) : array();
 						
 						$found = false;
 						foreach ($panierContent as $key => $item) {
-							//current product is $p
-							$p = $item->product;
 							//if id's are matching
-							if($p->idProduit == $id){
+							if($item->id == $id){
 								//update quantity for this item
 								$item->quantity += $q;
 								$found = true;
@@ -73,7 +68,7 @@
 						}
 						if(!$found){
 							//add new product to panier
-							$panierContent[] = new PanierItem($product, $q);
+							$panierContent[] = new PanierItem($id, $q);
 						}
 
 						//set cookie

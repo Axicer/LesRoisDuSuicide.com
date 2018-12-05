@@ -47,24 +47,26 @@
 					$connected = $_SESSION["connected"];
 					if($connected) {
 						echo "<div class=\"navbar_main_item\" id=\"deconnect\">";
-						echo "<a href=\"./?page=login&action=deconnect\">Deconnexion</a>";
-						echo "</div>";
+						echo "	<a href=\"./?page=login&action=deconnect\">Deconnexion</a>";
 					}else{
 						echo "<div class=\"navbar_main_item\" id=\"login\">";
-						echo "<a href=\"./?page=login\">Connexion</a>";
-						echo "</div>";
+						echo "	<a href=\"./?page=login\">Connexion</a>";
 					}
 				}else{
 					echo "<div class=\"navbar_main_item\" id=\"login\">";
-					echo "<a href=\"./?page=login\">Connexion</a>";
-					echo "</div>";
+					echo "	<a href=\"./?page=login\">Connexion</a>";
 				}
+				echo "	<div class=\"navbar_sub_item\" id=\"login_create\">";
+				echo "		<a href=\"./?page=login&action=create_form\">Creer un compte</a>";
+				echo "	</div>";
+				echo "</div>";
 			?>
 		</div>
 	</header>
 	<?php
 	$validViews = ["ACCUEIL", "PRODUITS_LIST", "PRODUITS_SHOW", "PRODUITS_SEARCH",
-	 "PRODUITS_FORM", "LOGIN_FORM", "LOGIN_FORM_ERROR", "LOGIN_LOGGED", "LOGIN_DECONNECT", "CONTACT_FORM", "CONTACT_SEND",
+	 "PRODUITS_FORM", "LOGIN_FORM", "LOGIN_FORM_ERROR", "LOGIN_LOGGED", "LOGIN_DECONNECT",
+	 "LOGIN_CREATE", "LOGIN_CREATED", "LOGIN_CREATE_ERROR", "CONTACT_FORM", "CONTACT_SEND",
 	 "PANIER", "ABOUT", "PANIER_LIST", "PANIER_ADDED", "PANIER_DELETED"];
 
 	if (in_array($view, $validViews)) {
@@ -95,6 +97,15 @@
 			break;
 			case "LOGIN_DECONNECT":
 			require File::build_path(array("view", "login", "disconnected.php"));
+			break;
+			case "LOGIN_CREATE":
+			require File::build_path(array("view", "login", "create.php"));
+			break;
+			case "LOGIN_CREATE_ERROR":
+			require File::build_path(array("view", "panier", "create_error.php"));
+			break;
+			case "LOGIN_CREATED":
+			require File::build_path(array("view", "panier", "created.php"));
 			break;
 			case "CONTACT_FORM":
 			require File::build_path(array("view", "contact", "contact.php"));

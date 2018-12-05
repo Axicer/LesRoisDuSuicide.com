@@ -1,9 +1,12 @@
-<p>Connectez vous a votre site favori de science occulte !</p>
-<form action="./?page=login" method="post">
+<p>Creer un compte sur votre site favori de science occulte !</p>
+<form>
 	<fieldset>
 		<div id="login">
 		    <label for="login">Login</label> :
 		    <input type="text" placeholder="login" name="login" id="login" required/>
+		</div>
+		<div id="data">
+			<!-- TODO -->
 		</div>
 		<div id="mdp">
 		    <label for="mdp">Mot de passe</label> :
