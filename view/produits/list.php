@@ -15,7 +15,7 @@
 				<img class="image_P" src=res/imgs/<?php echo $p->imageProduit ?>>
 			</div>
 			<a href="./?page=produit&action=specific&id=<?php echo $p->idProduit;?>">En savoir plus !</a>
-			<a href="./?page=panier&action=add&new_product=<?php echo $p->idProduit;?>">Ajouter au panier !</a>
+			<a href="./?page=panier&action=add&id=<?php echo $p->idProduit;?>">Ajouter au panier !</a>
 		</div>
 		<hr>
 		<?php
