@@ -1,34 +1,17 @@
 <?php
 	require_once File::build_path(array("model", "Produit.php"));
-	// require_once File::build_path(array("controller", "Query.php"));
+	require_once File::build_path(array("controller", "Query.php"));
 	
 	class ControllerAccueil{
 
 		public function __construct(){
-			$p1 = new Produit(["idProduit" => "p1",
-								"nom" => "produit 1",
-								"qteStock" => 20,
-								"prix" => 6.66,
-								"description" => "OwO",
-								"imageProduit" => "404.png"]);
-			$p2 = new Produit(["idProduit" => "p2", "nom" => "produit 2",
-								"qteStock" => 20,
-								"prix" => 69,
-								"description" => "OwO",
-								"imageProduit" => "404.png"]);
-			$p3 = new Produit(["idProduit" => "p3", "nom" => "produit 3",
-								"qteStock" => 20,
-								"prix" => 42,
-								"description" => "OwO",
-								"imageProduit" => "404.png"]);
-			$p4 = new Produit(["idProduit" => "p4", "nom" => "produit 4",
-								"qteStock" => 20,
-								"prix" => 21,
-								"description" => "OwO",
-								"imageProduit" => "404.png"]);
+			$new_produits = array();
+			$promo_produits = array();
 
-			$new_produits = array($p1,$p2,$p3,$p4);
-			$promo_produits = array($p1,$p2,$p3,$p4);
+			for($i = 1 ; $i <= 4 ; $i++){
+				$new_produits[] = Query::getSpecificProduct($i);
+				$promo_produits[] = Query::getSpecificProduct($i);
+			}
 			
 			$title = "Accueil";
 			//require view

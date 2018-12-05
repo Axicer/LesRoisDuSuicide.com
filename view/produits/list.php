@@ -9,20 +9,11 @@
 			<div class="info_produit">
 				<div> <?php echo $p->nom; ?></div>
 				<div> <?php echo $p->prix; ?>€</div>
-
 				<div> <?php echo $p->description; ?></div>
-
-				<?php
-				//-----------------------------TEST-----------------------------//
-				$id = $p->idProduit;
-				echo "TEST : $id";
-				echo "<br>";
-				?>
-
-				<img class="image_P" src=res/imgs/<?php echo $p->imageProduit ?>>
+				<img class="image_P" src="res/imgs/<?php echo $p->imageProduit ?>">
 			</div>
 			<div class="param">
-				<a href="./?page=produit&action=specific&id=<?php echo $id; ?>">En savoir plus !</a>
+				<a href="./?page=produits&action=specific&id=<?php echo $id; ?>">En savoir plus !</a>
 				<a href="./?page=panier&action=add&id=<?php echo $id; ?>">Ajouter au panier !</a>
 			</div>
 		</div>

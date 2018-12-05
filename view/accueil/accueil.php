@@ -15,7 +15,7 @@
 			<!-- nom + lien, prix -->
 			<div class = "new_prod_nom&prix">
 				<p> <!-- recup name --> 
-					<a href="?page=produits&id=<?php echo $new_produits[0]->idProduit;?>" >
+					<a href="?page=produits&action=specific&id=<?php echo $new_produits[0]->idProduit;?>" >
 						<?php echo $new_produits[0]->nom;?>
 					</a>
 				</p>
@@ -28,14 +28,14 @@
 			<!-- img + lien -->
 			<div class = "new_prod_img">
 				<!-- recup image + lien href -->
-				<a href = "?page=produits&id=<?php echo $new_produits[1]->idProduit;?>">
+				<a href = "?page=produits&action=specific&id=<?php echo $new_produits[1]->idProduit;?>">
 					<img src = "res/imgs/<?php echo $new_produits[1]->imageProduit;?>" alt="img">
 				</a>
 			</div>
 			<!-- nom + lien, prix -->
 			<div class = "new_prod_nom&prix">
 				<p> <!-- recup name --> 
-					<a href="?page=produits&id=<?php echo $new_produits[0]->idProduit;?>" >
+					<a href="?page=produits&action=specific&id=<?php echo $new_produits[0]->idProduit;?>" >
 						<?php echo $new_produits[1]->nom;?>
 					</a>
 				</p>
@@ -48,14 +48,14 @@
 			<!-- img + lien -->
 			<div class = "new_prod_img">
 				<!-- recup image + lien href -->
-				<a href = "?page=produits&id=<?php echo $new_produits[2]->idProduit;?>">
+				<a href = "?page=produits&action=specific&id=<?php echo $new_produits[2]->idProduit;?>">
 					<img src = "res/imgs/<?php echo $new_produits[2]->imageProduit;?>" alt="img">
 				</a>
 			</div>
 			<!-- nom + lien, prix -->
 			<div class = "new_prod_nom&prix">
 				<p> <!-- recup name --> 
-					<a href="?page=produits&id=<?php echo $new_produits[0]->idProduit;?>" >
+					<a href="?page=produits&action=specific&id=<?php echo $new_produits[0]->idProduit;?>" >
 						<?php echo $new_produits[2]->nom;?>
 					</a>
 				</p>
@@ -68,14 +68,14 @@
 			<!-- img + lien -->
 			<div class = "new_prod_img">
 				<!-- recup image + lien href -->
-				<a href = "?page=produits&id=<?php echo $new_produits[3]->idProduit;?>">
+				<a href = "?page=produits&action=specific&id=<?php echo $new_produits[3]->idProduit;?>">
 					<img src = "res/imgs/<?php echo $new_produits[3]->imageProduit;?>" alt="img">
 				</a>
 			</div>
 			<!-- nom + lien, prix -->
 			<div class = "new_prod_nom&prix">
 				<p> <!-- recup name --> 
-					<a href="?page=produits&id=<?php echo $new_produits[0]->idProduit;?>" >
+					<a href="?page=produits&action=specific&id=<?php echo $new_produits[0]->idProduit;?>" >
 						<?php echo $new_produits[3]->nom;?>
 					</a>
 				</p>
@@ -95,14 +95,14 @@
 			<!-- img + lien -->
 			<div class = "promo_prod_img">
 				<!-- recup image + lien href -->
-				<a href = "?page=produits&id=<?php echo $promo_produits[0]->idProduit;?>">
+				<a href = "?page=produits&action=specific&id=<?php echo $promo_produits[0]->idProduit;?>">
 					<img src = "res/imgs/<?php echo $promo_produits[0]->imageProduit;?>" alt="img" >
 				</a>
 			</div>
 			<!-- nom + lien, prix -->
 			<div class = "promo_prod_nom&prix">
 				<p> <!-- recup name --> 
-					<a href="?page=produits&id=<?php echo $promo_produits[0]->idProduit;?>" >
+					<a href="?page=produits&action=specific&id=<?php echo $promo_produits[0]->idProduit;?>" >
 						<?php echo $promo_produits[0]->nom;?>
 					</a>
 				</p>
@@ -115,14 +115,14 @@
 			<!-- img + lien -->
 			<div class = "promo_prod_img">
 				<!-- recup image + lien href -->
-				<a href = "?page=produits&id=<?php echo $promo_produits[1]->idProduit;?>">
+				<a href = "?page=produits&action=specific&id=<?php echo $promo_produits[1]->idProduit;?>">
 					<img src = "res/imgs/<?php echo $promo_produits[1]->imageProduit;?>" alt="img">
 				</a>
 			</div>
 			<!-- nom + lien, prix -->
 			<div class = "promo_prod_nom&prix">
 				<p> <!-- recup name --> 
-					<a href="?page=produits&id=<?php echo $promo_produits[0]->idProduit;?>" >
+					<a href="?page=produits&action=specific&id=<?php echo $promo_produits[0]->idProduit;?>" >
 						<?php echo $promo_produits[1]->nom;?>
 					</a>
 				</p>
@@ -135,14 +135,14 @@
 			<!-- img + lien -->
 			<div class = "promo_prod_img">
 				<!-- recup image + lien href -->
-				<a href = "?page=produits&id=<?php echo $promo_produits[2]->idProduit;?>">
+				<a href = "?page=produits&action=specific&id=<?php echo $promo_produits[2]->idProduit;?>">
 					<img src = "res/imgs/<?php echo $promo_produits[2]->imageProduit;?>" alt="img">
 				</a>
 			</div>
 			<!-- nom + lien, prix -->
 			<div class = "promo_prod_nom&prix">
 				<p> <!-- recup name --> 
-					<a href="?page=produits&id=<?php echo $promo_produits[0]->idProduit;?>" >
+					<a href="?page=produits&action=specific&id=<?php echo $promo_produits[0]->idProduit;?>" >
 						<?php echo $promo_produits[2]->nom;?>
 					</a>
 				</p>
@@ -155,14 +155,14 @@
 			<!-- img + lien -->
 			<div class = "promo_prod_img">
 				<!-- recup image + lien href -->
-				<a href = "?page=produits&id=<?php echo $promo_produits[3]->idProduit;?>">
+				<a href = "?page=produits&action=specific&id=<?php echo $promo_produits[3]->idProduit;?>">
 					<img src = "res/imgs/<?php echo $promo_produits[3]->imageProduit;?>" alt="img">
 				</a>
 			</div>
 			<!-- nom + lien, prix -->
 			<div class = "promo_prod_nom&prix">
 				<p> <!-- recup name --> 
-					<a href="?page=produits&id=<?php echo $promo_produits[0]->idProduit;?>" >
+					<a href="?page=produits&action=specific&id=<?php echo $promo_produits[0]->idProduit;?>" >
 						<?php echo $promo_produits[3]->nom;?>
 					</a>
 				</p>
