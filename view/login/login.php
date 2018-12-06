@@ -11,10 +11,10 @@
 		    <input type="password" placeholder="Mot de passe" name="mdp" id="mdp" required/>
 		</div>
 		<div id="mdp2">
-		    <label for="mdp2">retapez votre mot de passe</label> :
+		    <label for="mdp2">Confirmez votre mot de passe</label> :
 		    <input type="password" placeholder="Mot de passe" name="mdp2" id="mdp2" required/>
 		</div>
-		<!--Formulaire "caché" pour pouvoir envoyer action=created à routeur.php-->
+		<!--Formulaire "caché" pour pouvoir envoyer action=logged à routeur.php-->
 		<input type="hidden" name="action" value="logged"/>
 		<input type="submit" value="Envoyer"/>
 	</fieldset>
