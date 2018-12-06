@@ -5,7 +5,7 @@
         <title></title>
     </head>
     <body>
-		<form method="post" action= index.php>
+		<form method="post" action="./">
 			<input type="hidden" name="page" value="contact"/>
 			<input type="hidden" name="action" value="send"/>
 			<fieldset>
