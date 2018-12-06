@@ -56,7 +56,7 @@
 							$admin = $_SESSION["admin"] == 1;
 							if($admin){
 								echo "	<div class=\"navbar_sub_item\" id=\"admin\">";
-								echo "		<a href=\"./?page=admin\" >Administration</a>";
+								echo "		<a href=\"./?page=admin&action=show\" >Administration</a>";
 								echo "	</div>";
 							}
 						}
