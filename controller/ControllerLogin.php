@@ -60,7 +60,6 @@
 					case "logged":
 						$id = Util::getFromGETorPOST("login");
 						$mdp = Util::getFromGETorPOST("mdp");
-						$mdp2 = Util::getFromGETorPOST("mdp2");
 
 						//check login
 						$client = Query::login($id, $mdp);
