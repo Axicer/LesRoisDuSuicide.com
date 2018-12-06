@@ -1,14 +1,13 @@
 
-.tab_new_products{
+.tab_products{
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-	grid-gap: 3%;
-	justify-content: center;
-	margin: 2%;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	width: 90%;
+	margin: auto;
 	text-align: center;
 }
 
-.tab_new_products > div{
+.tab_products > div{
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -16,51 +15,21 @@
 	border-bottom-right-radius: 25px;
 	border-top-left-radius: 25px; 
 	background-color: rgba(250,250,250,0.7);
-
-	
-
+	max-width: 300px;
+	margin: auto;
 }
 
-.new_prod_img{
+.prod_img{
 	text-align: center;
 	height: 320px;
 	margin: auto;
 
+
 }
 
-.new_prod_img img{
-	height: 300px;
-}
-
-/*------------------------------------------------*/
-
-.tab_promo_products{
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-	grid-gap: 3%;
-	justify-content: center;
-	margin: 2%;
-	text-align: center;
-}
-
-.tab_promo_products > div{
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	border: 1px black solid;
-	border-bottom-right-radius: 25px;
-	border-top-left-radius: 25px; 
-	background-color: rgba(255, 255, 255, 0.8);
-}
-
-.promo_prod_img{
-	text-align: center;
-	height: 320px;
-	margin: auto;
-}
-
-.promo_prod_img img{
-	height: 300px;
+.prod_img img{
+	max-height: 300px;
+	max-width: 300px;
 }
 
 h2 {
