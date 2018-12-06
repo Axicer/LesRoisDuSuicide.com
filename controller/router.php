@@ -2,7 +2,7 @@
 	require_once File::build_path(array("model", "Model.php"));
 	require_once File::build_path(array("controller", "Util.php"));
 
-	$pagesValide = ["accueil", "contact", "login", "admin", "produits", "panier", "about"];
+	$pagesValide = ["accueil", "contact", "login", "admin", "produits", "panier", "about", "admin"];
 	$page = Util::getFromGETorPOST("page");
 	if($page == NULL)$page = "accueil";
 	//init DB

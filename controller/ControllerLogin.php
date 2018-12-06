@@ -63,12 +63,13 @@
 						$mdp2 = Util::getFromGETorPOST("mdp2");
 
 						//check login
-						$valid = Query::login($id, $mdp);
-						if($valid){
+						$client = Query::login($id, $mdp);
+						if($client != NULL){
 							$title = "Connexion reussie !";
 							$view = "LOGIN_LOGGED";
 							$_SESSION["connected"] = true;
 							$_SESSION["login"] = $id;
+							$_SESSION["admin"] = $client->privileges;
 						}else{
 							$title = "Echec connexion";
 							$view = "LOGIN_FORM_ERROR";
@@ -79,7 +80,9 @@
 					case "deconnect":
 						//set disconnected
 						unset($_SESSION['connected']);
-
+						unset($_SESSION["login"]);
+						unset($_SESSION["admin"]);
+						
 						$title = "Deconnecté";
 						//call view with view arg to "LOGIN_DECONNECT"
 						$view = "LOGIN_DECONNECT";

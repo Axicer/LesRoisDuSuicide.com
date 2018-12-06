@@ -50,26 +50,46 @@
 					if($connected) {
 						echo "<div class=\"navbar_main_item\" id=\"deconnect\">";
 						echo "	<a href=\"./?page=login&action=deconnect\">Deconnexion</a>";
+						
+						//add admin page if admin
+						if(array_key_exists("admin", $_SESSION)){
+							$admin = $_SESSION["admin"] == 1;
+							if($admin){
+								echo "	<div class=\"navbar_sub_item\" id=\"admin\">";
+								echo "		<a href=\"./?page=admin\" >Administration</a>";
+								echo "	</div>";
+							}
+						}
+
+						echo "</div>";
 					}else{
 						echo "<div class=\"navbar_main_item\" id=\"login\">";
 						echo "	<a href=\"./?page=login\">Connexion</a>";
+						echo "	<div class=\"navbar_sub_item\" id=\"login_create\">";
+						echo "		<a href=\"./?page=login&action=create_form\">Creer un compte</a>";
+						echo "	</div>";
+						echo "</div>";
 					}
 				}else{
 					echo "<div class=\"navbar_main_item\" id=\"login\">";
 					echo "	<a href=\"./?page=login\">Connexion</a>";
+					echo "	<div class=\"navbar_sub_item\" id=\"login_create\">";
+					echo "		<a href=\"./?page=login&action=create_form\">Creer un compte</a>";
+					echo "	</div>";
+					echo "</div>";
 				}
-				echo "	<div class=\"navbar_sub_item\" id=\"login_create\">";
-				echo "		<a href=\"./?page=login&action=create_form\">Creer un compte</a>";
-				echo "	</div>";
-				echo "</div>";
 			?>
 		</div>
 	</header>
 	<?php
-	$validViews = ["ACCUEIL", "PRODUITS_LIST", "PRODUITS_SHOW", "PRODUITS_SEARCH",
-	 "PRODUITS_FORM", "LOGIN_FORM", "LOGIN_FORM_ERROR", "LOGIN_LOGGED", "LOGIN_DECONNECT",
-	 "LOGIN_CREATE", "LOGIN_CREATED", "LOGIN_CREATE_ERROR", "CONTACT_FORM", "CONTACT_SEND",
-	 "PANIER", "ABOUT", "PANIER_LIST", "PANIER_ADDED", "PANIER_DELETED"];
+	$validViews = ["ACCUEIL",
+	"PRODUITS_LIST", "PRODUITS_SHOW", "PRODUITS_SEARCH", "PRODUITS_FORM",
+	"LOGIN_FORM", "LOGIN_FORM_ERROR", "LOGIN_LOGGED", "LOGIN_DECONNECT", "LOGIN_CREATE", "LOGIN_CREATED", "LOGIN_CREATE_ERROR",
+	"CONTACT_FORM", "CONTACT_SEND",
+	"PANIER", "PANIER_LIST", "PANIER_ADDED", "PANIER_DELETED",
+	"ABOUT", 
+	"ADMIN", 
+	"404", "403"];
 
 	if (in_array($view, $validViews)) {
 		switch ($view) {
@@ -129,6 +149,15 @@
 			break;
 			case "PANIER_DELETED":
 			require File::build_path(array("view", "panier", "panier_list.php"));
+			break;
+			case "ADMIN":
+			require File::build_path(array("view", "admin", "admin.php"));
+			break;
+			case "403":
+			require File::build_path(array("view", "error", "403.php"));
+			break;
+			case "404":
+			require File::build_path(array("view", "error", "404.php"));
 			break;
 		}
 	}else{

@@ -123,7 +123,7 @@ class Query {
 	public static function login($login, $mdp){
 		$hashmdp = hash("sha256", $mdp);
 		$client = self::getClient($login);
-		if($client == NULL)return false;
-		return $client->mdp == $hashmdp;
+		if($client == NULL)return NULL;
+		return $client->mdp == $hashmdp ? $client : NULL;
 	}
 }
