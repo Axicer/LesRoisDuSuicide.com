@@ -79,6 +79,7 @@
 													"codePostal" => $codePostal,
 													"ville" => $ville,
 													"mdp" => hash("sha256", $mdp1));
+									//TODO fix SQL
 									$created = Query::pushNewClient($values);
 									if($created){
 										$title = "Client crée ! - Administration";

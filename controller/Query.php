@@ -35,6 +35,7 @@ class Query {
 			$req_prep->execute($clientData);
 			return true;
 		}catch(Exception $e){
+			echo $e;
 			return false;
 		}
 	}
