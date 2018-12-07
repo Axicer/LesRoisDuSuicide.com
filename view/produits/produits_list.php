@@ -7,7 +7,7 @@
 		echo "<div class=\"un_produit\">
 			<div class=\"info_produit\">
 				<div>".$p->nom."</div>
-				<div>".$p->prix."€</div>
+				<div class=\"prix\">".$p->prix."€</div>
 				<div>".$p->description."</div>
 				<img class=\"image_P\" src=\"res/imgs/".$p->imageProduit."\" alt=\"".$p->nom."\">
 			</div>

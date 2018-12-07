@@ -12,11 +12,21 @@
     margin: 5px;
 }
 
+.param a{
+    background-color: rgba(120,120,120,0.5);
+}
+
 .info_produit{
     display: flex;
+    align-items: center;
+ 
     justify-content: center;
     text-align: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+}
+
+.info_produit > *{
+    width: 25%;
 }
 
 .prix{
@@ -24,7 +34,7 @@
     font-style: italic;
 }
 
-.info_produit > div{
+.info_produit > *{
     margin: 15px;
     width: 20%;
     display: flex;
