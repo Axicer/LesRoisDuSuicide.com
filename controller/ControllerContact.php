@@ -12,7 +12,7 @@
 			if($action == NULL)$action = "form";
 			if(!in_array($action, $validAction)){
 				//call 404
-				$view = "404";
+				$view = "ERROR_404";
 				require File::build_path(array("view", "view.php"));
 			}else{
 				switch ($action) {

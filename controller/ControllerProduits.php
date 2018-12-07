@@ -18,7 +18,7 @@ class ControllerProduit {
 		if (!in_array($action, $validAction)) {
 			$title = "404";
 			//call 404
-			$view = "404";
+			$view = "ERROR_404";
 			require File::build_path(array("view", "view.php"));
 		} else {
 			switch ($action) {
@@ -38,7 +38,7 @@ class ControllerProduit {
 					$id = Util::getFromGETorPOST("id");
 					if ($id == NULL) {
 						//send 404
-						$view = "404";
+						$view = "ERROR_404";
 						require File::build_path(array("view", "view.php"));
 					} else {
 						$product = Query::getSpecificProduct($id);
@@ -63,7 +63,7 @@ class ControllerProduit {
 					$name = Util::getFromGETorPOST("name");
 					if ($name == NULL) {
 						//send 404
-						$view = "404";
+						$view = "ERROR_404";
 						require File::build_path(array("view", "view.php"));
 					} else {
 						$products = Query::rechercheProduit($name);

@@ -84,103 +84,16 @@
 		</div>
 	</header>
 	<?php
-	$validViews = ["ACCUEIL",
-	"PRODUITS_LIST", "PRODUITS_SHOW", "PRODUITS_SEARCH", "PRODUITS_FORM",
-	"LOGIN_FORM", "LOGIN_FORM_ERROR", "LOGIN_LOGGED", "LOGIN_DECONNECT", "LOGIN_CREATE", "LOGIN_CREATED", "LOGIN_CREATE_ERROR",
-	"CONTACT_FORM", "CONTACT_SEND",
-	"PANIER", "PANIER_LIST", "PANIER_ADDED", "PANIER_DELETED",
-	"ABOUT", 
-	"ADMIN","ADMIN_PRODUCT_ADDED", "ADMIN_PRODUCT_DELETED", "ADMIN_CLIENT_ADDED", "ADMIN_CLIENT_DELETED", "ADMIN_ERROR", 
-	"404", "403"];
-
-	if (in_array($view, $validViews)) {
-		switch ($view) {
-			case "ACCUEIL":
-			require File::build_path(array("view", "accueil", "accueil.php"));
-			break;
-			case "PRODUITS_LIST":
-			require File::build_path(array("view", "produits", "list.php"));
-			break;
-			case "PRODUITS_SHOW":
-			require File::build_path(array("view", "produits", "show.php"));
-			break;
-			case "PRODUITS_SEARCH":
-			require File::build_path(array("view", "produits", "search.php"));
-			break;
-			case "PRODUITS_FORM":
-			require File::build_path(array("view", "produits", "search-form.php"));
-			break;
-			case "LOGIN_FORM":
-			require File::build_path(array("view", "login", "login.php"));
-			break;
-			case "LOGIN_FORM_ERROR":
-			require File::build_path(array("view", "login", "form-error.php"));
-			break;
-			case "LOGIN_LOGGED":
-			require File::build_path(array("view", "login", "logged.php"));
-			break;
-			case "LOGIN_DECONNECT":
-			require File::build_path(array("view", "login", "disconnected.php"));
-			break;
-			case "LOGIN_CREATE":
-			require File::build_path(array("view", "login", "create.php"));
-			break;
-			case "LOGIN_CREATE_ERROR":
-			require File::build_path(array("view", "login", "create_error.php"));
-			break;
-			case "LOGIN_CREATED":
-			require File::build_path(array("view", "login", "created.php"));
-			break;
-			case "CONTACT_FORM":
-			require File::build_path(array("view", "contact", "contact.php"));
-			break;
-			case "CONTACT_SEND":
-			require File::build_path(array("view", "contact", "contacted.php"));
-			break;
-			case "PANIER":
-			require File::build_path(array("view", "panier", "panier.php"));
-			break;
-			case "ABOUT":
-			require File::build_path(array("view", "about", "about.php"));
-			break;
-			case "PANIER_LIST":
-			require File::build_path(array("view", "panier", "panier_list.php"));
-			break;
-			case "PANIER_ADDED":
-			require File::build_path(array("view", "panier", "panier_added.php"));
-			break;
-			case "PANIER_DELETED":
-			require File::build_path(array("view", "panier", "panier_list.php"));
-			break;
-			case "ADMIN":
-			require File::build_path(array("view", "admin", "admin.php"));
-			break;
-			case "ADMIN_PRODUCT_ADDED":
-			require File::build_path(array("view", "admin", "admin_product_added.php"));
-			break;
-			case "ADMIN_PRODUCT_DELETED":
-			require File::build_path(array("view", "admin", "admin_product_deleted.php"));
-			break;
-			case "ADMIN_CLIENT_ADDED":
-			require File::build_path(array("view", "admin", "admin_client_added.php"));
-			break;
-			case "ADMIN_CLIENT_DELETED":
-			require File::build_path(array("view", "admin", "admin_client_deleted.php"));
-			break;
-			case "ADMIN_ERROR":
-			require File::build_path(array("view", "admin", "admin_error.php"));
-			break;
-			case "403":
-			require File::build_path(array("view", "error", "403.php"));
-			break;
-			case "404":
+		$fileName = strtolower($view).".php";
+		$pageRelated = strtolower(explode("_", $view)[0]);
+		try{
+			//try to get the needed view
+			require File::build_path(array("view", $pageRelated, $fileName));
+		}catch(Exception $e){
+			//send 404 if not found
+			$title	= "404 - view not found";
 			require File::build_path(array("view", "error", "404.php"));
-			break;
 		}
-	}else{
-		$title	= "404";
-		require File::build_path(array("view", "error", "404.php"));
-	}
 	?>
 </body>
 </html>

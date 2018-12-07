@@ -107,15 +107,15 @@
 						}
 					}else{
 						$title= "404";
-						$view = "404";
+						$view = "ERROR_404";
 					}
 				}else{
 					$title = "403";
-					$view = "403";
+					$view = "ERROR_403";
 				}
 			}else{
 				$title = "403";
-				$view = "403";
+				$view = "ERROR_403";
 			}
 			require File::build_path(array("view", "view.php"));
 		}

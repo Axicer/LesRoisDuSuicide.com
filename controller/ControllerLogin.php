@@ -14,7 +14,7 @@
 			if(!in_array($action, $validAction)){
 				$title = "404";
 				//call 404
-				$view = "404";
+				$view = "ERROR_404";
 				require File::build_path(array("view", "view.php"));
 			}else{
 				switch ($action) {
