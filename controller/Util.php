@@ -9,13 +9,5 @@
 				return NULL;
 			}
 		}
-
-		static function getFromPOST($name){
-			if(array_key_exists($name, $_POST)){
-				return $_POST[$name];
-			}else{
-				return NULL;
-			}
-		}
 	}
 ?>

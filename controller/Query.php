@@ -80,7 +80,7 @@ class Query {
 
     		return $tab;
     	} catch (Exception $ex) {
-    		return false;
+    		return NULL;
     	}
     }
 

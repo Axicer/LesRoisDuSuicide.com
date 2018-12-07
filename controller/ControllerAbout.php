@@ -5,8 +5,6 @@
 	class ControllerPanier{
 
 		public function __construct(){
-			//TODO
-
 			$title = "A propos";
 			//require view
 			$view = "ABOUT";

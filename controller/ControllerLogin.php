@@ -12,22 +12,17 @@
 			$action = Util::getFromGETorPOST("action");
 			if($action == NULL)$action = "form";
 			if(!in_array($action, $validAction)){
-				$title = "404";
-				//call 404
+				$title = "404 - action not found";
 				$view = "ERROR_404";
-				require File::build_path(array("view", "view.php"));
 			}else{
 				switch ($action) {
 					case "form":
 						$title = "Connexion";
-						//call view with view arg to "LOGIN_FORM"
 						$view = "LOGIN_FORM";
-						require File::build_path(array("view", "view.php"));
 						break;
 					case "create_form":
 						$title = "Creation de compte";
 						$view = "LOGIN_CREATE";
-						require File::build_path(array("view", "view.php"));
 						break;
 					case "create":
 						$login = Util::getFromGETorPOST("login");
@@ -40,21 +35,23 @@
 						$mdp2 = Util::getFromGETorPOST("mdp2");
 
 						if($mdp1 != $mdp2){
-							$title = "Erreur - creation de compte";
+							$title = "Erreur - Creation de compte";
 							$view = "LOGIN_CREATE_ERROR";
-							require File::build_path(array("view", "view.php"));
 						}else{
-							Query::pushNewClient(array("login" => $login,
+							$created = Query::pushNewClient(array("login" => $login,
 														"nom" => $nom,
 														"prenom" => $prenom,
 														"adresse" => $adresse,
 														"codePostal" => $codePostal,
 														"ville" => $ville,
 														"mdp" => hash("sha256", $mdp1)));
-
-							$title = "compte crée !";
-							$view = "LOGIN_CREATED";
-							require File::build_path(array("view", "view.php"));
+							if($created){
+								$title = "Compte crée ! - Creation de compte";
+								$view = "LOGIN_CREATED";
+							}else{
+								$title = "Erreur - creation de compte";
+								$view = "LOGIN_CREATE_ERROR";
+							}
 						}
 						break;
 					case "logged":
@@ -73,8 +70,6 @@
 							$title = "Echec connexion";
 							$view = "LOGIN_FORM_ERROR";
 						}
-
-						require File::build_path(array("view", "view.php"));
 						break;
 					case "deconnect":
 						//set disconnected
@@ -83,12 +78,11 @@
 						unset($_SESSION["admin"]);
 						
 						$title = "Deconnecté";
-						//call view with view arg to "LOGIN_DECONNECT"
 						$view = "LOGIN_DECONNECT";
-						require File::build_path(array("view", "view.php"));
 						break;
 				}
 			}
+			require File::build_path(array("view", "view.php"));
 		}
 	}
 

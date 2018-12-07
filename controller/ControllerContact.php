@@ -11,30 +11,26 @@
 			$action = Util::getFromGETorPOST("action");
 			if($action == NULL)$action = "form";
 			if(!in_array($action, $validAction)){
-				//call 404
+				$title = "404 - action not found"
 				$view = "ERROR_404";
-				require File::build_path(array("view", "view.php"));
 			}else{
 				switch ($action) {
 					case "form":
 						$title = "Formulaire de contact";
-						//call view with view arg to "CONTACT_FORM"
 						$view = "CONTACT_FORM";
-						require File::build_path(array("view", "view.php"));
 						break;
 					case "send":
-						$name = Util::getFromPost("nom");
-						$prenom = Util::getFromPost("prenom");
-						$email = Util::getFromPost("email");
-						$message = Util::getFromPost("message");
+						$name = Util::getFromGETorPOST("nom");
+						$prenom = Util::getFromGETorPOST("prenom");
+						$email = Util::getFromGETorPOST("email");
+						$message = Util::getFromGETorPOST("message");
 
-						$title= "Message envoyé";
-						//call view with view arg to "CONTACT_SEND"
+						$title= "Message envoyé - Contact";
 						$view = "CONTACT_SEND";
-						require File::build_path(array("view", "view.php"));
 						break;
 				}
 			}
+			require File::build_path(array("view", "view.php"));
 		}
 	}
 

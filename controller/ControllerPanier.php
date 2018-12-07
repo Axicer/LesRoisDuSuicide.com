@@ -11,10 +11,8 @@
 			$action = Util::getFromGETorPOST("action");
 			if($action == NULL)$action = "list";
 			if(!in_array($action, $validAction)){
-				$title = "404";
-				//call 404
+				$title = "404 action not found";
 				$view = "ERROR_404";
-				require File::build_path(array("view", "view.php"));
 			}else{
 				switch ($action) {
 					case "list":
@@ -23,7 +21,6 @@
 						$panierAmount = count($panierContent);
 						$title = "Panier";
 						$view = "PANIER_LIST";
-						require File::build_path(array("view", "view.php"));
 						break;
 					case "delete":
 						//get id
@@ -45,7 +42,6 @@
 
 						$title = "Objet supprimé !";
 						$view = "PANIER_DELETED";
-						require File::build_path(array("view", "view.php"));
 						break;
 					case "add":
 						//get new product
@@ -77,10 +73,10 @@
 
 						$title = "Objet ajouté !";
 						$view = "PANIER_ADDED";
-						require File::build_path(array("view", "view.php"));
 						break;
 				}
 			}
+			require File::build_path(array("view", "view.php"));
 		}
 	}
 
