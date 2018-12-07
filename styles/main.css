@@ -1,3 +1,8 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
 body{
 	background-color: white;
 	background-image: url("../res/imgs/background.jpg");
@@ -12,11 +17,6 @@ header{
     position: sticky;
     width: 100%;
     top: 0px;
-}
-
-*{
-	margin: 0;
-	padding: 0;
 }
 
 #pres{
@@ -92,4 +92,12 @@ header{
 
 .imgError{
     width: 500px;
+}
+
+/*-------------------------------------------------------------------*/
+
+#connexion_status{
+	position: absolute;
+	margin-left: 10px;
+	margin-top: 5px;
 }
