@@ -9,23 +9,14 @@
 	Model::Init();
 	//init session
 	session_start();
-	//check for page valid
-	if(in_array($page, $pagesValide)){
-		//controller name
-		$cname = "Controller".ucfirst($page);
-		if(file_exists(File::build_path(array("controller", $cname.".php")))){
-			//require new controller
-            require File::build_path(array("controller", $cname.".php"));
-        }else{
-        	$title = "404 Error";
-            //call 404
-			$view = "404";
-			require File::build_path(array("view", "view.php"));
-        }
+	
+	$cname = "Controller".ucfirst($page);
+	$path = File::build_path(array("controller", $cname.".php"));
+	if(file_exists($path)){
+		require $path;
 	}else{
-		$title = "404 Error";
-		//call 404
-		$view = "404";
+		$title = "404 - Page not found";
+		$view = "ERROR_404";
 		require File::build_path(array("view", "view.php"));
 	}
 ?>
