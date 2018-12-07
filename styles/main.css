@@ -28,7 +28,9 @@ header{
 }
 
 #pres div{
-	text-align: left;
+	text-align: center;
+	margin-top: 50px;
+	transform: translateY(-50%);
 }
 
 #pres img{
