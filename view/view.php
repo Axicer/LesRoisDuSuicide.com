@@ -92,7 +92,7 @@
 		}catch(Exception $e){
 			//send 404 if not found
 			$title	= "404 - view not found";
-			require File::build_path(array("view", "error", "404.php"));
+			require File::build_path(array("view", "error", "error_404.php"));
 		}
 	?>
 </body>
