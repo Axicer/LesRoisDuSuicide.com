@@ -8,7 +8,40 @@ require_once File::build_path(array("model", "Type.php"));
 
 class Query {
 
-    /*
+	/* ----------------------------- CLIENT ---------------------------*/
+
+	public static function login($login, $mdp){
+		$hashmdp = hash("sha256", $mdp);
+		$client = self::getClient($login);
+		if($client == NULL)return NULL;
+		return $client->mdp == $hashmdp ? $client : NULL;
+	}
+
+	public static function getClient($login){
+		$sql = "SELECT * FROM Clients WHERE login=:login";
+		$req_prep = Model::$pdo->prepare($sql);
+		$values = array("login" => $login);
+		$req_prep->execute($values);
+		$req_prep->setFetchMode(PDO::FETCH_CLASS, "Client");
+		$tab = $req_prep->fetchAll();
+		if(count($tab) == 0)return NULL;
+		return $tab[0];
+	}
+
+	public static function pushNewClient($clientData){
+		try{
+			$sql = "INSERT INTO Clients(login, nom, prenom, adresse, codePostal, ville, mdp) VALUES (:login, :nom, :prenom, :adresse, :codePostal, :ville, :mdp)";
+			$req_prep = Model::$pdo->prepare($sql);
+			$req_prep->execute($clientData);
+			return true;
+		}catch(Exception $e){
+			return false;
+		}
+	}
+
+	/* --------------- PRODUCTS ------------------------------*/
+
+	/*
      * 	$mots est un mot clé
      *  But : afficher le contenu de la table Produit correspondant au mot clé inscrit
      */
@@ -102,28 +135,26 @@ class Query {
 		return $tab;
 	}
 
-	public static function getClient($login){
-		$sql = "SELECT * FROM Clients WHERE login=:login";
-		$req_prep = Model::$pdo->prepare($sql);
-		$values = array("login" => $login);
-		$req_prep->execute($values);
-		$req_prep->setFetchMode(PDO::FETCH_CLASS, "Client");
-		$tab = $req_prep->fetchAll();
-		if(count($tab) == 0)return NULL;
-		return $tab[0];
+	public static function pushNewProduct($productData){
+		try{
+			$sql = "INSERT INTO Produits(nom, qteStock, prix, description, imageProduit) VALUES (:nom, :qteStock, :prix, :description, :imageProduit)";
+			$req_prep = Model::$pdo->prepare($sql);
+			$req_prep->execute($clientData);
+			return true;
+		}catch(Exception $e){
+			return false;
+		}
 	}
 
-	public static function pushNewClient($clientData){
-		$sql = "INSERT INTO Clients(login, nom, prenom, adresse, codePostal, ville, mdp) VALUES (:login, :nom, :prenom, :adresse, :codePostal, :ville, :mdp)";
-		$req_prep = Model::$pdo->prepare($sql);
-		$req_prep->execute($clientData);
-
-	}
-
-	public static function login($login, $mdp){
-		$hashmdp = hash("sha256", $mdp);
-		$client = self::getClient($login);
-		if($client == NULL)return NULL;
-		return $client->mdp == $hashmdp ? $client : NULL;
+	public static function popProduct($id){
+		try{
+			$sql = "DELETE FROM Produits WHERE idProduit=:id";
+			$req_prep = Model::$pdo->prepare($sql);
+			$values = array("id" => $id);
+			$req_prep->execute($values);
+			return true;
+		}catch(Exception $e){
+			return false;
+		}
 	}
 }

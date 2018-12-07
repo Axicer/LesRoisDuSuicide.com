@@ -85,3 +85,11 @@ header{
 #login{
 	background-color: #FAAC58;
 }
+
+.big_text{
+    font-size: 40px;
+}
+
+.imgError{
+    width: 500px;
+}
