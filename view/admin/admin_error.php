@@ -1,5 +1,7 @@
 <h1>Administration</h1>
 
+<p id="success">Une erreur est survenue !</p>
+
 <div id="produits">
 	<p>Manipulation de produits :</p>
 	<form action="./" method="POST">

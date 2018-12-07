@@ -90,7 +90,7 @@
 	"CONTACT_FORM", "CONTACT_SEND",
 	"PANIER", "PANIER_LIST", "PANIER_ADDED", "PANIER_DELETED",
 	"ABOUT", 
-	"ADMIN", 
+	"ADMIN","ADMIN_PRODUCT_ADDED", "ADMIN_PRODUCT_DELETED", "ADMIN_CLIENT_ADDED", "ADMIN_CLIENT_DELETED", "ADMIN_ERROR", 
 	"404", "403"];
 
 	if (in_array($view, $validViews)) {
@@ -154,6 +154,21 @@
 			break;
 			case "ADMIN":
 			require File::build_path(array("view", "admin", "admin.php"));
+			break;
+			case "ADMIN_PRODUCT_ADDED":
+			require File::build_path(array("view", "admin", "admin_product_added.php"));
+			break;
+			case "ADMIN_PRODUCT_DELETED":
+			require File::build_path(array("view", "admin", "admin_product_deleted.php"));
+			break;
+			case "ADMIN_CLIENT_ADDED":
+			require File::build_path(array("view", "admin", "admin_client_added.php"));
+			break;
+			case "ADMIN_CLIENT_DELETED":
+			require File::build_path(array("view", "admin", "admin_client_deleted.php"));
+			break;
+			case "ADMIN_ERROR":
+			require File::build_path(array("view", "admin", "admin_error.php"));
 			break;
 			case "403":
 			require File::build_path(array("view", "error", "403.php"));

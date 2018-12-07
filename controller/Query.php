@@ -39,6 +39,18 @@ class Query {
 		}
 	}
 
+	public static function popClient($id){
+		try{
+			$sql = "DELETE FROM Clients WHERE idClient=:id";
+			$req_prep = Model::$pdo->prepare($sql);
+			$values = array("id" => $id);
+			$req_prep->execute($values);
+			return true;
+		}catch(Exception $e){
+			return false;
+		}
+	}
+
 	/* --------------- PRODUCTS ------------------------------*/
 
 	/*

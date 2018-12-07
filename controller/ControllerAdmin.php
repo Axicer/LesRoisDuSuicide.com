@@ -11,7 +11,7 @@
 				$admin = $_SESSION["admin"] == 1;
 				if($admin){
 
-					$validAction = ["show", "product_add", "product_del"];
+					$validAction = ["show", "product_add", "product_del", "client_add", "client_del"];
 					$action = Util::getFromGETorPOST("action");
 					if($action == NULL)$action = "list";
 
@@ -41,7 +41,7 @@
 									$view = "ADMIN_PRODUCT_ADDED";
 								}else{
 									$title = "Erreur - Administration";
-									$view = "ADMIN_PRODUCT_ERROR";
+									$view = "ADMIN_ERROR";
 								}
 								break;
 							case "product_del":
@@ -54,9 +54,55 @@
 									$title = "Produit supprimé - Administration";
 									$view = "ADMIN_PRODUCT_DELETED";
 								}else{
-									$title = "Erreur - ADministration";
-									$view = "ADMIN_PRODUCT_ERROR";
+									$title = "Erreur - Administration";
+									$view = "ADMIN_ERROR";
 								}
+								break;
+							case "client_add":
+								$login = Util::getFromGETorPOST("login");
+								$nom = Util::getFromGETorPOST("nom");
+								$prenom = Util::getFromGETorPOST("prenom");
+								$addresse = Util::getFromGETorPOST("addresse");
+								$codePostal = Util::getFromGETorPOST("codePostal");
+								$ville = Util::getFromGETorPOST("ville");
+								$mdp1 = Util::getFromGETorPOST("mdp1");
+								$mdp2 = Util::getFromGETorPOST("mdp2");
+
+								if($mdp1 != $mdp2){
+									$title = "Erreur - Administration";
+									$view = "ADMIN_ERROR";
+								}else{
+									$values = array("login" => $login,
+													"nom" => $nom,
+													"prenom" => $prenom,
+													"addresse" => $addresse,
+													"codePostal" => $codePostal,
+													"ville" => $ville,
+													"mdp" => hash("sha256", $mdp1));
+									$created = Query::pushNewClient($values);
+									if($created){
+										$title = "Client crée ! - Administration";
+										$view = "ADMIN_CLIENT_ADDED";
+									}else{
+										$title = "Erreur - Administration";
+										$view = "ADMIN_ERROR";
+									}
+								}
+								break;
+							case "client_del":
+
+								$id = Util::getFromGETorPOST("id");
+
+								$deleted = Query::popClient($id);
+
+								if($id){
+									$title = "Client supprimé ! - Administration";
+									$view = "ADMIN_CLIENT_DELETED";
+								}else{
+									$title = "Erreur - Administration";
+									$view = "ADMIN_ERROR";
+								}
+
 								break;
 						}
 					}else{

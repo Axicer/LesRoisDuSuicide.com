@@ -1,5 +1,7 @@
 <h1>Administration</h1>
 
+<p id="success">Le produit a été correctement supprimé !</p>
+
 <div id="produits">
 	<p>Manipulation de produits :</p>
 	<form action="./" method="POST">

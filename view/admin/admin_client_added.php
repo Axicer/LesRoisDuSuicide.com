@@ -1,5 +1,7 @@
 <h1>Administration</h1>
 
+<p id="success">Le client a été correctement ajouté !</p>
+
 <div id="produits">
 	<p>Manipulation de produits :</p>
 	<form action="./" method="POST">
