@@ -8,12 +8,13 @@
     flex-direction: column;
 }
 
-.param a{
-    margin: 5px;
+.param {
+    margin:10%;
 }
 
 .param a{
     background-color: rgba(120,120,120,0.5);
+    
 }
 
 .info_produit{
