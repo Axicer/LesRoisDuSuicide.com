@@ -40,9 +40,6 @@
 			<div class="navbar_main_item" id="panier">
 				<a href="./?page=panier">Panier</a>
 			</div>
-			<div class="navbar_main_item" id="about">
-				<a href="./?page=about">A propos</a>
-			</div>
 			<div class="navbar_main_item" id="contact">
 				<a href="./?page=contact">Contact</a>
 			</div>
