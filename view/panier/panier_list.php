@@ -1,9 +1,10 @@
 <link rel="stylesheet" type="text/css" href="styles/produits/produits.css">
 <?php
-	foreach ($panierContent as $item) {
-		$p = Query::getSpecificProduct($item->id);
-		$total = $item->quantity*$p->prix;
-		echo "<div class=\"un_produit\">
+foreach ($panierContent as $item) {
+	$p = Query::getSpecificProduct($item->id);
+	$total = $item->quantity * $p->prix;
+	echo "
+			<div class=\"un_produit\">
 			<div class=\"info_produit\">
 					<div>" . $p->nom . "</div>
 					<div class=\"prix\">" . $p->prix . "€</div>
@@ -12,9 +13,10 @@
 				</div>
 				<div class=\"param\">
 					<div>Quantité : $item->quantity</div>
-					<div>Prix total : ".$total."€
+					<div>Prix total : " . $total . "€
 				</div>
 			</div>
+			</div>
 			<hr>";
-	}
+}
 ?>
