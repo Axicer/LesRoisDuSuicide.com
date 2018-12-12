@@ -9,11 +9,9 @@
 }
 
 .log_fieldset>div{
-	display: block;
 	display: flex;
 	margin: 10px;
 	margin-right: 40%;
-	flex-grow: 1;
 	align-self: end;
 }
 
@@ -28,6 +26,4 @@
 
 label{
 	margin-right: 5px;
-	flex-grow: 1;
-	text-align: end;
 }
