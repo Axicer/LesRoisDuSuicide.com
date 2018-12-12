@@ -1,9 +1,15 @@
 <link rel="stylesheet" type="text/css" href="styles/produits/produits.css">
+
 <?php
-foreach ($panierContent as $item) {
-    $p = Query::getSpecificProduct($item->id);
-    $total = $item->quantity * $p->prix;
-    echo "
+if (count($panierContent) == 0) {
+	echo "<div class=\"big_text\">Votre panier est actuellement vide.</div>";
+} else {
+
+
+	foreach ($panierContent as $item) {
+		$p = Query::getSpecificProduct($item->id);
+		$total = $item->quantity * $p->prix;
+		echo "
 			<div class=\"un_produit\">
 			<div class=\"info_produit\">
 					<div>" . $p->nom . "</div>
@@ -17,9 +23,10 @@ foreach ($panierContent as $item) {
 				</div>
 			</div>
                             <div class=\"param\">
-                                <a href=\"./?page=panier&action=delete&id=".$p->idProduit."\">Retirer du panier.</a>
+                                <a href=\"./?page=panier&action=delete&id=" . $p->idProduit . "\">Retirer du panier.</a>
                             </div>
 			</div>
 			<hr>";
+	}
 }
 ?>
