@@ -17,11 +17,9 @@ foreach ($panierContent as $item) {
 				</div>
 			</div>
                             <div class=\"param\">
-                                
+                                <a href=\"./?page=panier&action=delete&id=".$p->idProduit."\">Retirer du panier.</a>
                             </div>
 			</div>
 			<hr>";
-    
-    //<a href=\"./?page=panier&action=delete&id=".$p->idProduit."\">Retirer du panier.</a>
 }
 ?>
