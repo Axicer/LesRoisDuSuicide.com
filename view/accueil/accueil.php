@@ -20,7 +20,7 @@
 					</a>
 				</p>
 				<p> <!-- recup prix --> 
-					<?php echo $new_produits[0]->prix;?>
+					<?php echo $new_produits[0]->prix."€";?>
 				</p>
 			</div>
 		</div>
@@ -40,7 +40,7 @@
 					</a>
 				</p>
 				<p> <!-- recup prix --> 
-					<?php echo $new_produits[1]->prix;?>
+					<?php echo $new_produits[1]->prix."€";?>
 				</p>
 			</div>
 		</div>
@@ -60,7 +60,7 @@
 					</a>
 				</p>
 				<p> <!-- recup prix --> 
-					<?php echo $new_produits[2]->prix;?>
+					<?php echo $new_produits[2]->prix."€";?>
 				</p>
 			</div>
 		</div>
@@ -80,7 +80,7 @@
 					</a>
 				</p>
 				<p> <!-- recup prix --> 
-					<?php echo $new_produits[3]->prix;?>
+					<?php echo $new_produits[3]->prix."€";?>
 				</p>
 			</div>
 		</div>	
@@ -107,7 +107,7 @@
 					</a>
 				</p>
 				<p> <!-- recup prix --> 
-					<?php echo $promo_produits[0]->prix;?>
+					<?php echo $promo_produits[0]->prix."€";?>
 				</p>
 			</div>
 		</div>
@@ -127,7 +127,7 @@
 					</a>
 				</p>
 				<p> <!-- recup prix --> 
-					<?php echo $promo_produits[1]->prix;?>
+					<?php echo $promo_produits[1]->prix."€";?>
 				</p>
 			</div>
 		</div>
@@ -147,7 +147,7 @@
 					</a>
 				</p>
 				<p> <!-- recup prix --> 
-					<?php echo $promo_produits[2]->prix;?>
+					<?php echo $promo_produits[2]->prix."€";?>
 				</p>
 			</div>
 		</div>
@@ -167,7 +167,7 @@
 					</a>
 				</p>
 				<p> <!-- recup prix --> 
-					<?php echo $promo_produits[3]->prix;?>
+					<?php echo $promo_produits[3]->prix."€";?>
 				</p>
 			</div>
 		</div>	
