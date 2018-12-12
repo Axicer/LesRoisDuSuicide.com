@@ -3,6 +3,7 @@
 <?php
 if (count($panierContent) == 0) {
 	echo "<div class=\"big_text\">Votre panier est actuellement vide.</div>";
+	echo "<img class=\"imgError\" src=\"res/imgs/shrug.png\">";
 } else {
 
 
