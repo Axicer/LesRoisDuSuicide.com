@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="styles/connexion/create.css">
-<p class= "petit_mot_gentil">Creer un compte sur votre site favori de science occulte !</p>
+<p class= "petit_mot_gentil">Créez un compte sur votre site favori de science occulte !</p>
 <form action="./?page=login" method="post">
 	<fieldset>
 		<div class="login_field">

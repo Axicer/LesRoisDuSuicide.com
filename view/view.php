@@ -16,7 +16,7 @@
 				$connected = $_SESSION["connected"];
 				if($connected){
 					$login = $_SESSION["login"];
-					echo "<p id=\"connexion_status\">connecté en tant que $login</p>";
+					echo "<p id=\"connexion_status\">Connecté en tant que $login.</p>";
 				}
 			}
 		?>

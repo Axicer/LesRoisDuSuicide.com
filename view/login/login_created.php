@@ -1,2 +1,2 @@
-<p>Compte crée !</p>
-<a href="./?page=acceueil">Retour a l'accueil</a>
+<p>Votre compte a bien été créé !</p>
+<a href="./?page=accueil">Retour a l'accueil</a>

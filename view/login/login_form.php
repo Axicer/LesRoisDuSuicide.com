@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="styles/connexion/login.css">
-<p class="petit_mot_gentil">Connectez vous a votre site favori de science occulte !</p>
+<p class="petit_mot_gentil">Connectez vous à votre site favori de science occulte !</p>
 <form action="./?page=login" method="post">
 	<fieldset class="log_fieldset">
 		<div id="login_field">
