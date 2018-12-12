@@ -40,7 +40,7 @@
 												"adresse" => $adresse,
 												"codePostal" => $codePostal,
 												"ville" => $ville,
-												"mdp" => hash("sha256", $mdp1)));
+												"mdp" => hash("sha256", $mdp1."-security")));
 					if($created){
 						$title = "Compte crée ! - Creation de compte";
 						$view = "LOGIN_CREATED";
