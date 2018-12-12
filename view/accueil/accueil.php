@@ -86,7 +86,7 @@
 		</div>	
 	</div>
 
-	<h2>Promos:</h2>
+	<h2>En promo:</h2>
 
 	<!-- recupere 2 tableaux : $promo_produits - tableau des 4 produits et $promo_imgs - tableau des 4 images associees -->
 	<!-- tableau de 4 -->
