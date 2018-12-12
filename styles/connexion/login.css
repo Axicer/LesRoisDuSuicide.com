@@ -21,8 +21,8 @@
 	margin: 20px;
 }
 
-.log_fieldset>input{
-	margin-left: -15%;	
+input{
+	width: 150px;
 }
 
 label{

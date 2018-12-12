@@ -42,18 +42,13 @@ label{
 	text-align: end;
 }
 
-.too_small{
-	margin-right: 15%;
-}
-
-.code_postal{
-	margin-right: 14%;
-}
-
 .suppress{
 	align-self: center;
 }
 
+input{
+	width: 150px;
+}
 
 
 

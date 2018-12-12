@@ -21,10 +21,10 @@ fieldset>input{
 	text-align: center;
 	
 }
-.Code_Postal{
-	margin-right: 18%;
-}
 
+input{
+	width: 150px;
+}
 
 label{
 	margin-right: 5px;
