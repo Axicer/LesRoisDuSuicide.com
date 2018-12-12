@@ -13,7 +13,7 @@
 				</div>
 				<div class=\"param\">
 					<a href=\"./?page=produits&action=specific&id=".$p->idProduit."\">En savoir plus !</a>
-					<a href=\"./?page=panier&action=add&id=".$p->idProduit."\">Ajouter au panier !</a>
+					<a href=\"./?page=panier&action=add&id=".$p->idProduit."&retour=non\">Ajouter au panier !</a>
 				</div>
 			</div>
 			<hr>";
